@@ -16,4 +16,4 @@ async def on_ready():
         print(server)
     print('------------------')
 
-client.run(auth.user.Token)
+client.run(user.Token)
