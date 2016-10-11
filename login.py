@@ -1,6 +1,7 @@
 import discord
 
-from Config import auth
+from config.auth import user
+Token = user.Token
 
 client = discord.Client()
 
@@ -15,5 +16,5 @@ async def on_ready():
         print(server)
     print('------------------')
 
-client.run(auth.user.Token)
+client.run(Token)
 
