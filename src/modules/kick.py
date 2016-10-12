@@ -1,5 +1,4 @@
 import discord
-# not working
 
 async def kick(client, message, arg):
     string = arg.split(' ')
