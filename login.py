@@ -6,7 +6,6 @@ from config.auth import user
 class bot:
     # Define Bot Init to the use of self.
     def __init__(self):
-        self.running = True
         # self.commands = dir to commands
         # self.prefix = dir to prefix
         self.Token = user.Token
