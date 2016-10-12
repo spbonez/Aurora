@@ -1,6 +1,7 @@
 import discord
 
 from config.auth import user
+import CommandProcessor
 
 
 class bot:
@@ -22,6 +23,7 @@ class bot:
             for server in client.servers:
                 print(server)
             print('------------------')
+            CommandProcessor.begin(client)
 
         client.run(self.Token)
 
