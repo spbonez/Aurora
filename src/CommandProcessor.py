@@ -1,5 +1,4 @@
 import discord
-# from src.modules import *
 import src.modules as module
 
 
