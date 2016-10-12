@@ -22,7 +22,7 @@ async def kick(client, message, arg):
                                               'Reason for your kick: ```' + reason + '```')
             # Kick the member
             await client.send_message(message.channel, '' + member.name + ' was kicked, and a personal message'
-                                                                ' was sent to him/her with the '
-                                                                'reason: ```' + reason + '```')
+                                                       ' was sent to him/her with the '
+                                                       'reason: ```' + reason + '```')
             await client.kick(member)
             break
