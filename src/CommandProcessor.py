@@ -16,4 +16,4 @@ def begin(client):
             del msg[0]
             argument = ' '.join(msg)
 
-            await getattr(module, command)(client, message.channel, argument)
+            await getattr(module, command)(client, message, argument)

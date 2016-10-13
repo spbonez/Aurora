@@ -1,6 +1,6 @@
 import discord
 
-async def kick(client, message, arg):
+async def ban(client, message, arg):
     string = arg.split(' ')
 
     # Get the members ID
@@ -17,12 +17,12 @@ async def kick(client, message, arg):
     members = client.get_all_members()
     for member in members:
         if member.id == member_id:
-            # Send message to the user, with the reason to the kick
-            await client.send_message(member, 'You have been kicked from KvasigSG Development\n'
-                                              'Reason for your kick: ```' + reason + '```')
-            # Kick the member
-            await client.send_message(message.channel, '' + member.name + ' was kicked, and a personal message'
+            # Send message to the user, with the reason to the ban
+            await client.send_message(member, 'You have been banned from KvasigSG Development\n'
+                                              'Reason for your ban: ```' + reason + '```')
+            # ban the member
+            await client.send_message(message.channel, '' + member.name + ' was banned, and a personal message'
                                                        ' was sent to him/her with the '
                                                        'reason: ```' + reason + '```')
-            await client.kick(member)
+            await client.ban(member, 2)
             break
