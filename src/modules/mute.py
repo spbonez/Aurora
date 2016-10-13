@@ -20,9 +20,7 @@ async def mute(client, message, arg):
                 # Find the member using the ID
                 members = client.get_all_members()
                 for member in members:
-                    print('Current id:', member.id, '| our member id:', member_id)
                     if member.id == member_id:
                         # Mute the member
-                        print('did it')
                         await client.add_roles(member, role)
                         break
