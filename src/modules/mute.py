@@ -10,14 +10,19 @@ async def mute(client, message, arg):
     member_id = member_id.replace('>', '')
 
     # Find the mute role
-    roles = client.roles
-    for role in roles:
-        print(role)
+    for server in client.servers:
+        print(server)
+        for roles in server.roles:
+            print(roles.name)
+            if roles.name == 'Muted':
+                role = roles
 
-    # Find the member using the ID
-    members = client.get_all_members()
-    for member in members:
-        if member.id == member_id:
-            # Mute the member
-            # await client.add_roles(member, 'Muted')
-            break
+                # Find the member using the ID
+                members = client.get_all_members()
+                for member in members:
+                    print('Current id:', member.id, '| our member id:', member_id)
+                    if member.id == member_id:
+                        # Mute the member
+                        print('did it')
+                        await client.add_roles(member, role)
+                        break
