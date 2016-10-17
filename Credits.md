@@ -4,3 +4,5 @@ Organization: KvasirSG Development
 Flix: Project Manager, coder.
 <br>
 Luke: Coder
+<br>
+Cassie: Coder
