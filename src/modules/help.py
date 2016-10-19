@@ -21,6 +21,9 @@ async def help(client, message, *args):
     elif cmd == 'roll':
         helptext = '```\n!' + cmd + '\n```'
         destext = '```\n[!' + cmd + '] rolls a dice from 1 to 6\n```'
+    elif cmd == 'list':
+        helptext = '```\n!' + cmd + '\n```'
+        destext = '```\n[!' + cmd + '] list the available commands\n```'
     else:
         helptext= '```\n!help [command_name]\n !\n```'
         destext= '```\n[!help] display the Usage and Description of the command\n```'
