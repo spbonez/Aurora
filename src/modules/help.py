@@ -18,9 +18,15 @@ async def help(client, message, *args):
     elif cmd == 'mute':
         helptext = '```\n!' + cmd + ' [@user]\n```'
         destext = '```\n[!' + cmd + '] mutes a member\n```'
+    elif cmd == 'unmute':
+        helptext = '```\n!' + cmd + ' [@user]\n```'
+        destext = '```\n[!' + cmd + '] unmute as member\n```'
     elif cmd == 'roll':
         helptext = '```\n!' + cmd + '\n```'
         destext = '```\n[!' + cmd + '] rolls a dice from 1 to 6\n```'
+    elif cmd == 'list':
+        helptext = '```\n!' + cmd + '\n```'
+        destext = '```\n[!' + cmd + '] list the available commands\n```'
     else:
         helptext= '```\n!help [command_name]\n !\n```'
         destext= '```\n[!help] display the Usage and Description of the command\n```'
