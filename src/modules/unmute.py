@@ -1,6 +1,6 @@
 import src.permission as perm
 
-async def mute(client, message, arg):
+async def unmute(client, message, arg):
     if await perm.have_access(message.author) == perm.Roles.Admin.Level:
         string = arg.split(' ')
 
@@ -23,7 +23,7 @@ async def mute(client, message, arg):
                     for member in members:
                         if member.id == member_id:
                             # Mute the member
-                            await client.add_roles(member, role)
+                            await client.remove_roles(member, role)
                             break
     else:
         await client.send_message(message.channel, 'This command is only available for ' + perm.Roles.Admin.Name + 's')

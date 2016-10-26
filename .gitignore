@@ -4,3 +4,6 @@ config/__pycache__/auth.cpython-35.pyc
 config/__pycache__/auth.cpython-36.pyc
 *.pyc
 src/modules/__pycache__/hi.cpython-35.pyc
+config/auth.py
+*.pyc
+*.pyc
