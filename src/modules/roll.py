@@ -1,4 +1,3 @@
-import discord
 import random
 
 async def roll(client, message, *args):

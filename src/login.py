@@ -1,7 +1,8 @@
 import discord
 
 from config.auth import user
-import CommandProcessor
+import src.CommandProcessor as CP
+import src.permission
 
 
 class bot:
@@ -23,7 +24,9 @@ class bot:
             for server in client.servers:
                 print(server)
             print('------------------')
-            CommandProcessor.begin(client)
+            CP.begin(client)
+            # Uncomment to get all role id printed out in console
+            # await permission.update(client)
 
         client.run(self.Token)
 

@@ -1,5 +1,5 @@
-import discord
 import src.modules as module
+import src.permission as perm
 
 
 def begin(client):
@@ -9,11 +9,16 @@ def begin(client):
             print('New message from:', message.author, 'in Channel:', message.channel, '\nContent:', message.content)
 
         if message.content.startswith('!'):
-
-            msg = message.content.lower().split(' ')
-            command = msg[0]
-            command = command.replace('!', '')
-            del msg[0]
-            argument = ' '.join(msg)
-
-            await getattr(module, command)(client, message, argument)
+            if await perm.have_access(message.author) >= perm.Roles.Everyone.Level:
+                msg = message.content.lower().split(' ')
+                command = msg[0]
+                command = command.replace('!', '')
+                del msg[0]
+                argument = ' '.join(msg)
+                try:
+                    await getattr(module, command)(client, message, argument)
+                except AttributeError:
+                    await client.send_message(message.channel, 'Sry that is not a command,'
+                                                               ' did you spell it right ?')
+            else:
+                await client.send_message(message.channel, 'Im sry, but you dont have permission to use commands')
