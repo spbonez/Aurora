@@ -3,11 +3,9 @@
 # FlixBot
 Official "KvasirSG Development" Discord Bot
 
-http://kvasirsg.com/
-
 ## Requirements
 
-1. Python 3
+1. ![python](https://www.python.org/static/favicon.ico) [Python 3](https://www.python.org/) 
 2. discord.py python package `pip install discord.py`
 
 ## Install and run

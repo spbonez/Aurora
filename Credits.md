@@ -1,5 +1,5 @@
 #Credits
-Organization: KvasirSG Development
+Organization: [KvasirSG Development](http://kvasirsg.com/)
 ##Main Team
 [Flix](https://github.com/IPFlix): Project Manager, Coder.
 <br>
