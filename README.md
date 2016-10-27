@@ -1,6 +1,8 @@
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/KvasirSGDevelopment/FlixBot/blob/master/LICENSE.md)
+<br>
 # FlixBot
 Official "KvasirSG Development" Discord Bot
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/KvasirSGDevelopment/FlixBot/blob/master/LICENSE.md)
+
 http://kvasirsg.com/
 
 ## Requirements
