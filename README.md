@@ -5,7 +5,7 @@ Official "KvasirSG Development" Discord Bot
 
 ## Requirements
 
-1. ![python](https://www.python.org/static/favicon.ico) [Python 3](https://www.python.org/) 
+1. [Python 3](https://www.python.org/) 
 2. discord.py python package `pip install discord.py`
 
 ## Install and run
