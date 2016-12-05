@@ -1,4 +1,4 @@
-import discord
+import src.permission as perm
 
 async def ban(client, message, arg):
     if await perm.have_access(message.author) == perm.Roles.Admin.Level:
