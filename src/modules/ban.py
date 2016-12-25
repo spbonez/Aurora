@@ -1,4 +1,5 @@
 import src.permission as perm
+import discord.utils as utils
 
 async def ban(client, message, arg):
     if await perm.have_permission(message.author) == 2:
@@ -14,18 +15,15 @@ async def ban(client, message, arg):
         del string[0]
         reason = ' '.join(string)
 
-        # Find the member using the ID
-        members = client.get_all_members()
-        for member in members:
-            if member.id == member_id:
-                # Send message to the user, with the reason to the ban
-                await client.send_message(member, 'You have been banned from KvasigSG Development\n'
-                                                  'Reason for your ban: ```' + reason + '```')
-                # ban the member
-                await client.send_message(message.channel, '' + member.name + ' was banned, and a personal message'
-                                                           ' was sent to him/her with the '
-                                                           'reason: ```' + reason + '```')
-                await client.ban(member, 2)
-                break
+        member = utils.get(message.sever.members, id=member_id)
+        # Send message to the user, with the reason to the ban
+        await client.send_message(member, 'You have been banned from KvasigSG Development\n'
+                                          'Reason for your ban: ```' + reason + '```')
+        # ban the member
+        await client.send_message(message.channel, '' + member.name + ' was banned, and a personal message'
+                                                                      ' was sent to him/her with the '
+                                                                      'reason: ```' + reason + '```')
+        await client.ban(member, 2)
+
     else:
         await client.send_message(message.channel, 'This command is only available for ' + str(perm.Admin_Name) + 's')

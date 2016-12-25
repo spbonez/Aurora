@@ -1,4 +1,5 @@
 import src.permission as perm
+import discord.utils as utils
 
 async def mute(client, message, arg):
     if await perm.have_permission(message.author) == 2:
@@ -10,20 +11,9 @@ async def mute(client, message, arg):
         member_id = member_id.replace('@', '')
         member_id = member_id.replace('>', '')
 
-        # Find the mute role
-        for server in client.servers:
-            # print(server)
-            for roles in server.roles:
-                # print(roles.name)
-                if roles.name == 'Muted':
-                    role = roles
+        muted_role = utils.get(message.server.roles, name='Muted')
+        member = utils.get(message.server.members, id=member_id)
+        await client.add_roles(member, muted_role)
 
-                    # Find the member using the ID
-                    members = client.get_all_members()
-                    for member in members:
-                        if member.id == member_id:
-                            # Mute the member
-                            await client.add_roles(member, role)
-                            break
     else:
         await client.send_message(message.channel, 'This command is only available for ' + str(perm.Admin_Name) + 's')
