@@ -9,7 +9,7 @@ def begin(client):
             print('New message from:', message.author, 'in Channel:', message.channel, '\nContent:', message.content)
 
         if message.content.startswith('!'):
-            if await perm.have_access(message.author) >= perm.Roles.Everyone.Level:
+            if await perm.have_permission(message.author):
                 msg = message.content.lower().split(' ')
                 command = msg[0]
                 command = command.replace('!', '')
