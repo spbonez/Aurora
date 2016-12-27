@@ -1,8 +1,8 @@
 import discord
-
-from config.auth import user
 import src.CommandProcessor as CP
 import src.permission as perm
+import src.Utilities as utilis
+from config.auth import user
 
 
 class bot:
@@ -28,7 +28,7 @@ class bot:
 
         @client.event
         async def on_server_join(server):
-            await perm.first_run(client, server)
+            await utilis.first_run(client, server)
 
         client.run(self.Token)
 
