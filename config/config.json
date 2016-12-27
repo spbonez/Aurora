@@ -1,0 +1,15 @@
+{
+  "Servers": {
+    "KvasirSG Development": {
+      "Muted": "235904268098338816",
+      "@everyone": "228212523885658112",
+      "Flixbot Admin.": "262003167208800256"
+    },
+    "Not Enough RAM": {
+      "FlixBot": "262352419948724235",
+      "Muted": "255406803955744778",
+      "@everyone": "255100808658550785",
+      "Flixbot Admin.": "262352423379664899"
+    }
+  }
+}

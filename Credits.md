@@ -1,10 +1,10 @@
 #Credits
-Organization: KvasirSG Development
+Organization: [KvasirSG Development](http://kvasirsg.com/)
 ##Main Team
-Flix: Project Manager, Coder.
+[Flix](https://github.com/IPFlix): Project Manager, Coder.
 <br>
-Luke: Coder
+[Luke](https://github.com/Luke0129): Coder
 <br>
-Cassie: Coder
+[Cassie](https://github.com/MeCassie): Coder
 <br>
-Sagooper: Coder
+[sagooper](https://github.com/sagooper): Coder

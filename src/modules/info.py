@@ -3,7 +3,7 @@ import src.permission as perm
 async def info(client, message, *args):
     args = args[0].split(' ')
     if args[0] == 'update':
-        if await perm.have_access(message.author) == perm.Roles.Admin.Level:
+        if await perm.have_permission(message.author) == 2:
             del args[0]
 
             new_info = ' '.join(args)
@@ -15,7 +15,7 @@ async def info(client, message, *args):
                                                        '```')
         else:
             await client.send_message(message.channel, 'This command is only available for '
-                                      + perm.Roles.Admin.Name + 's')
+                                      + str(perm.Admin_Name) + 's')
 
     else:
         # Read a file

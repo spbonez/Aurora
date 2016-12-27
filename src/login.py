@@ -2,7 +2,7 @@ import discord
 
 from config.auth import user
 import src.CommandProcessor as CP
-import src.permission
+import src.permission as perm
 
 
 class bot:
@@ -25,8 +25,10 @@ class bot:
                 print(server)
             print('------------------')
             CP.begin(client)
-            # Uncomment to get all role id printed out in console
-            # await permission.update(client)
+
+        @client.event
+        async def on_server_join(server):
+            await perm.first_run(client, server)
 
         client.run(self.Token)
 
