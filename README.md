@@ -1,4 +1,4 @@
-[![website](https://img.shields.io/badge/Website-KvasigSG-lightgrey.svg)](http://kvasirsg.com/) [![contributors](https://img.shields.io/badge/contributors-5-blue.svg)](https://github.com/KvasirSGDevelopment/FlixBot/graphs/contributors) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/KvasirSGDevelopment/FlixBot/blob/master/LICENSE.md) [![python](https://img.shields.io/badge/Python-5.3.2-blue.svg)](https://www.python.org/)
+[![website](https://img.shields.io/badge/Website-KvasigSG-lightgrey.svg)](http://kvasirsg.com/) [![contributors](https://img.shields.io/badge/contributors-5-blue.svg)](https://github.com/KvasirSGDevelopment/FlixBot/graphs/contributors) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/KvasirSGDevelopment/FlixBot/blob/master/LICENSE.md) [![python](https://img.shields.io/badge/Python-5.3.2-blue.svg)](https://www.python.org/) ![discord-py](https://img.shields.io/badge/Discord.py-0.16.0-blue.svg)
 <br>
 # FlixBot
 Official "KvasirSG Development" Discord Bot
