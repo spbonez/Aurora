@@ -1,19 +1,63 @@
 import src.permission as perm
-import discord.utils as utils
-import src.Utilities as my_utils
+import json
 
 async def join(client, message, arg):
-    roles = arg.split(' ')
-    restricted_roles = ['bat_member', 'administrator', 'administrative adviser',
-                        'flixbot admin.', 'founders', 'selene', 'the twins']
+    arg = arg.split(',')
+    arg = [v.replace(' ', '') for v in arg]
 
-    for role in roles:
-        if role in restricted_roles:
-            await client.send_message(message.channel, role + ' requires admin approval')
+    with open('../config/config.json', 'r') as json_file:
+        data = json.load(json_file)
 
     for role in message.server.roles:
-        if str(role.name.lower()) in roles and str(role.name) not in restricted_roles:
+        if str(role.name.lower()) in arg \
+                and str(role.name.lower()) not in data['Servers'][str(message.server)]['Locked_Roles']:
             await client.add_roles(message.author, role)
+        elif str(role.name.lower()) in data['Servers'][str(message.server)]['Locked_Roles']:
+            await client.send_message(message.channel, role.name + ' requires admin approval')
 
-    for server in client.severs:
-        await my_utils.RolesTrack().new_server(server)
+async def addlockedrole(client, message, arg):
+
+    if perm.have_permission(message.author) == 2:
+        arg = arg.split(',')
+        arg = [v.replace(' ', '') for v in arg]
+
+        with open('../config/config.json', 'r') as json_file:
+            data = json.load(json_file)
+        json_file.close()
+
+        with open('../config/config.json', 'w') as json_file:
+            for role in message.server.roles:
+                if str(role.name.lower()) in arg:
+                    data['Servers'][str(message.server)]['Locked_Roles'][str(role.name.lower())] = str(role.name)
+
+            json.dump(data, json_file, indent=2, sort_keys=True)
+        json_file.close()
+    else:
+        await client.send_message(message.channel, 'This command is only available for ' + str(perm.Admin_Name) + 's')
+
+async def showroles(client, message, arg):
+    roles = []
+    with open('../config/config.json', 'r') as json_file:
+        data = json.load(json_file)
+    json_file.close()
+
+    for role in data['Servers'][str(message.server)]['Roles']:
+        if role not in data['Servers'][str(message.server)]['Locked_Roles']:
+            roles.append(data['Servers'][str(message.server)]['Roles'][str(role)])
+
+    roles.sort()
+    await client.send_message(message.channel, 'Available Roles are: ```' + '\n'.join(roles) + '```')
+
+async def leave(client, message, arg):
+    arg = arg.split(',')
+    arg = [v.replace(' ', '') for v in arg]
+
+    with open('../config/config.json', 'r') as json_file:
+        data = json.load(json_file)
+    json_file.close()
+
+    for role in message.server.roles:
+        if str(role.name.lower()) in arg \
+                and str(role.name) not in data['Servers'][str(message.server)]['Locked_Roles']:
+            await client.remove_roles(message.author, role)
+
