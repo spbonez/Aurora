@@ -3,6 +3,10 @@ import src.permission as perm
 
 
 def begin(client):
+
+    for cmd in module.__all__:
+        print(cmd)
+
     @client.event
     async def on_message(message):
         if message.author != client.user:
@@ -17,7 +21,7 @@ def begin(client):
                 argument = ' '.join(msg)
                 try:
                     await getattr(module, command)(client, message, argument)
-                except AttributeError:
+                except AttributeError and TypeError:
                     await client.send_message(message.channel, 'Sry that is not a command,'
                                                                ' did you spell it right ?')
             else:
