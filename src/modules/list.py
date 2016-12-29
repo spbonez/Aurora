@@ -1,19 +1,26 @@
-import os
-async def list(client, message, *args):
-        modules = os.listdir('.\modules')
+import json
+import src.permission as perm
+async def list(client, message, args):
+    with open('../config/config.json', 'r') as json_file:
+        data = json.load(json_file)
+    json_file.close()
+    admincmds = data['Commands']['Admin_Cmd']
+    usercmds = data['Commands']['User_Cmd']
+    AdminCommand = str(admincmds)
+    AdminCommand = AdminCommand.replace('[', '')
+    AdminCommand = AdminCommand.replace(']', '')
+    AdminCommand = AdminCommand.replace("'", "")
+    AdminCommands = AdminCommand.replace(', ', '\n')
 
-        modules.remove('__init__.py')
-        modules.remove('__pycache__')
-        command = []
-        print(modules)
-        for module in modules:
-            mymodule = module.replace('.py','')
-            cmd = '!' + mymodule
-            command.append(cmd)
-        mycommand = str(command)
-        mycommand = mycommand.replace('[','')
-        mycommand = mycommand.replace(']', '')
-        mycommand = mycommand.replace("'", "")
-        mycommands = mycommand.replace(', ', '\n')
+    UserCommand = str(usercmds)
+    UserCommand = UserCommand.replace('[', '')
+    UserCommand = UserCommand.replace(']', '')
+    UserCommand = UserCommand.replace("'", "")
+    UserCommands = UserCommand.replace(', ', '\n')
 
-        await client.send_message(message.channel, '```' + mycommands + '```')
+    print(admincmds)
+    print(usercmds)
+    if await perm.have_permission(message.author) == 2:
+        await client.send_message(message.channel, '**Admin Commands:**\n```' + AdminCommands + '```\n**User Commands:**\n```'+UserCommands+'```')
+    else:
+        await client.send_message(message.channel, '**User Commands:**\n```' + UserCommands + '```')
