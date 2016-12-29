@@ -3,7 +3,6 @@ import src.CommandProcessor as CP
 import src.permission as perm
 import src.Utilities as utilis
 from config.auth import User
-import src.Database as database
 
 
 class Bot:
@@ -26,12 +25,10 @@ class Bot:
                 print(server)
             print('------------------')
             CP.begin(client)
-            database.connect()
 
         @client.event
         async def on_server_join(server):
             await utilis.first_run(client, server)
-            database.new_server(server)
 
         @client.event
         async def on_server_role_create(role):
