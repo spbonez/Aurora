@@ -1,13 +1,13 @@
 {
   "Commands": {
     "Admin_Cmd": [
-      "!_ban",
-      "!_addlockedrole",
-      "!_kick",
-      "!_mute",
-      "!_fuckoff",
-      "!_sleave",
-      "!_unmute"
+      "!ban",
+      "!addlockedrole",
+      "!kick",
+      "!mute",
+      "!fuckoff",
+      "!sleave",
+      "!unmute"
     ],
     "User_Cmd": [
       "!cheers",
@@ -20,6 +20,93 @@
       "!list",
       "!roll"
     ]
+  },
+  "Helper": {
+    "!addlockedrole": {
+      "Description": "locks a role or multiple roles from join",
+      "Help": "!addlockedrole [rolename] or !addlockedrole [rolename] [rolename] and so on",
+      "Type": "Admin"
+    },
+    "!ban": {
+      "Description": "bans a user and sends him a message",
+      "Help": "!ban [@User] [Message]",
+      "Type": "Admin"
+    },
+    "!cheers": {
+      "Description": "",
+      "Help": "",
+      "Type": "User"
+    },
+    "!fuckoff": {
+      "Description": "Yeah. The Bot is out!",
+      "Help": "!fuckoff",
+      "Type": "Admin"
+    },
+    "!help": {
+      "Description": "display usage and description",
+      "Help": "!help [!command]",
+      "Type": "User"
+    },
+    "!hi": {
+      "Description": "displays hi",
+      "Help": "!hi",
+      "Type": "User"
+    },
+    "!info": {
+      "Description": "shows the bot information",
+      "Help": "!info",
+      "Type": "User"
+    },
+    "!join": {
+      "Description": "adds a cosmetic role to you, you can add multuple roles at the same time",
+      "Help": "!join [rolename] or !join [rolename] [rolename] and so on",
+      "Type": "User"
+    },
+    "!kick": {
+      "Description": "kicks the user from the server and sends him a message",
+      "Help": "!kick [@User] [Message]",
+      "Type": "Admin"
+    },
+    "!leave": {
+      "Description": "leaves the cosmetic role or roles",
+      "Help": "!leave [rolename] or !leave [rolename] [rolename] and so on",
+      "Type": "User"
+    },
+    "!list": {
+      "Description": "lists the commands",
+      "Help": "!list",
+      "Type": "User"
+    },
+    "!mute": {
+      "Description": "mutes the user",
+      "Help": "!mute [@User]",
+      "Type": "Admin"
+    },
+    "!roll": {
+      "Description": "Rolls the Dice",
+      "Help": "!roll",
+      "Type": "User"
+    },
+    "!showroles": {
+      "Description": "!shows the available roles",
+      "Help": "!showroles",
+      "Type": "User"
+    },
+    "!sleave": {
+      "Description": "And the bot left the server",
+      "Help": "!sleave",
+      "Type": "Admin"
+    },
+    "!start": {
+      "Description": "Sage is a moron",
+      "Help": "!start",
+      "Type": "Admin"
+    },
+    "!unmute": {
+      "Description": "unmute the User",
+      "Help": "!unmute [@User]",
+      "Type": "Admin"
+    }
   },
   "Servers": {
     "KvasirSG Development": {
@@ -36,6 +123,7 @@
     },
     "Not Enough RAM": {
       "Locked_Roles": {
+        "administrative adviser": "Administrative Adviser",
         "administrators": "Administrators",
         "bat_member": "BAT_MEMBER",
         "flixbot": "FlixBot",

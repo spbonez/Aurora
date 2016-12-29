@@ -8,7 +8,9 @@ Helper = {
 }
 async def join(client, message, arg):
     arg = arg.split(',')
-    arg = [v.replace(' ', '') for v in arg]
+    for v in arg:
+        if v.startswith(' '):
+            v = v[1:]
 
     with open('../config/config.json', 'r') as json_file:
         data = json.load(json_file)
@@ -17,14 +19,17 @@ async def join(client, message, arg):
         if str(role.name.lower()) in arg \
                 and str(role.name.lower()) not in data['Servers'][str(message.server)]['Locked_Roles']:
             await client.add_roles(message.author, role)
-        elif str(role.name.lower()) in data['Servers'][str(message.server)]['Locked_Roles']:
+        elif str(role.name.lower()) in data['Servers'][str(message.server)]['Locked_Roles'] \
+                and str(role.name.lower()) in arg:
             await client.send_message(message.channel, role.name + ' requires admin approval')
 
 async def addlockedrole(client, message, arg):
 
-    if perm.have_permission(message.author) == 2:
+    if await perm.have_permission(message.author) == 2:
         arg = arg.split(',')
-        arg = [v.replace(' ', '') for v in arg]
+        for v in arg:
+            if v.startswith(' '):
+                v = v[1:]
 
         with open('../config/config.json', 'r') as json_file:
             data = json.load(json_file)
@@ -55,7 +60,9 @@ async def showroles(client, message, arg):
 
 async def leave(client, message, arg):
     arg = arg.split(',')
-    arg = [v.replace(' ', '') for v in arg]
+    for v in arg:
+        if v.startswith(' '):
+            v = v[1:]
 
     with open('../config/config.json', 'r') as json_file:
         data = json.load(json_file)
