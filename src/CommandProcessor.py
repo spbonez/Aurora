@@ -1,6 +1,5 @@
 import src.modules as module
 import src.permission as perm
-import json
 
 
 def begin(client):
@@ -11,20 +10,11 @@ def begin(client):
 
         if message.content.startswith('!'):
             if await perm.have_permission(message.author):
-
-                with open('../config/config.json', 'r') as json_file:
-                    data = json.load(json_file)
-                json_file.close()
-
                 msg = message.content.lower().split(' ')
                 command = msg[0]
                 command = command.replace('!', '')
                 del msg[0]
                 argument = ' '.join(msg)
-
-                if command in data['Commands']['Admin_Cmd']:
-                    command = '_'+command
-
                 try:
                     await getattr(module, command)(client, message, argument)
                 except AttributeError:

@@ -1,26 +1,4 @@
 {
-  "Commands": {
-    "Admin_Cmd": [
-      "ban",
-      "addlockedrole",
-      "kick",
-      "mute",
-      "fuckoff",
-      "sleave",
-      "unmute"
-    ],
-    "User_Cmd": [
-      "cheers",
-      "help",
-      "hi",
-      "info",
-      "join",
-      "leave",
-      "showroles",
-      "list",
-      "roll"
-    ]
-  },
   "Servers": {
     "KvasirSG Development": {
       "Locked_Roles": {},

@@ -23,7 +23,7 @@ json_file.close()
 data['Commands'] = {'User_Cmd': [], 'Admin_Cmd': []}
 for cmd in __all__:
     if cmd.startswith('_'):
-        data['Commands']['Admin_Cmd'].append(cmd[1:])
+        data['Commands']['Admin_Cmd'].append(cmd)
     else:
         data['Commands']['User_Cmd'].append(cmd)
 
