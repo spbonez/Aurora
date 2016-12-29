@@ -2,6 +2,7 @@
   "Commands": {
     "Admin_Cmd": [
       "!ban",
+      "!makemerich",
       "!addlockedrole",
       "!kick",
       "!mute",
@@ -76,6 +77,11 @@
       "Description": "lists the commands",
       "Help": "!list",
       "Type": "User"
+    },
+    "!makemerich": {
+      "Description": "Sage is a moron",
+      "Help": "!makemerich",
+      "Type": "Admin"
     },
     "!mute": {
       "Description": "mutes the user",
