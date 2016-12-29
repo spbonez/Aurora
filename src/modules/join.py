@@ -15,7 +15,7 @@ async def join(client, message, arg):
         elif str(role.name.lower()) in data['Servers'][str(message.server)]['Locked_Roles']:
             await client.send_message(message.channel, role.name + ' requires admin approval')
 
-async def addlockedrole(client, message, arg):
+async def _addlockedrole(client, message, arg):
 
     if perm.have_permission(message.author) == 2:
         arg = arg.split(',')

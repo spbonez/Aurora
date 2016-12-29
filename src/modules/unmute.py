@@ -1,7 +1,7 @@
 import src.permission as perm
 import discord.utils as utils
 
-async def unmute(client, message, arg):
+async def _unmute(client, message, arg):
     if await perm.have_permission(message.author) == 2:
         string = arg.split(' ')
 
