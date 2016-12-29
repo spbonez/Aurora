@@ -25,10 +25,11 @@ data['Helper'] ={}
 data['Helper'].update(Helper)
 data['Commands'] = {'User_Cmd': [], 'Admin_Cmd': []}
 for cmd in __all__:
-    if Helper['!'+cmd]['Type']=='Admin':
-        data['Commands']['Admin_Cmd'].append('!'+cmd)
-    else:
-        data['Commands']['User_Cmd'].append('!'+cmd)
+    if '!'+cmd in Helper:
+        if Helper['!'+cmd]['Type']=='Admin':
+            data['Commands']['Admin_Cmd'].append('!'+cmd)
+        else:
+            data['Commands']['User_Cmd'].append('!'+cmd)
 
 with open('../config/config.json', 'w') as json_file:
     json.dump(data, json_file, indent=2, sort_keys=True)
