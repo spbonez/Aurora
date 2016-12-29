@@ -17,7 +17,7 @@ async def join(client, message, arg):
 
 async def _addlockedrole(client, message, arg):
 
-    if perm.have_permission(message.author) == 2:
+    if await perm.have_permission(message.author) == 2:
         arg = arg.split(',')
         arg = [v.replace(' ', '') for v in arg]
 
