@@ -1,7 +1,7 @@
 import random
 import os
 Helper = {
-    '!cheers':{'Help':'', 'Description':'', 'Type':'User'}
+    '!cheers':{'Help':'!cheers', 'Description':'cheers mate!', 'Type':'User'}
 }
 async def cheers(client, message, *args):
     beers = os.listdir('../img/beers')
