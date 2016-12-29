@@ -1,5 +1,7 @@
 import src.permission as perm
-
+Helper = {
+    '!info':{'Help':'!info', 'Description':'shows the bot information', 'Type':'User'}
+}
 async def info(client, message, *args):
     args = args[0].split(' ')
     if args[0] == 'update':

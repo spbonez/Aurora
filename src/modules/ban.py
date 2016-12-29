@@ -1,7 +1,10 @@
 import src.permission as perm
 import discord.utils as utils
+Helper = {
+    '!ban':{'Help':'!ban [@User] [Message]', 'Description':'bans a user and sends him a message', 'Type':'Admin'}
+}
+async def ban(client, message, arg):
 
-async def _ban(client, message, arg):
     if await perm.have_permission(message.author) == 2:
         string = arg.split(' ')
 

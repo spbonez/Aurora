@@ -1,7 +1,9 @@
 import src.permission as perm
 import discord.utils as utils
-
-async def _kick(client, message, arg):
+Helper = {
+    '!kick':{'Help':'!kick [@User] [Message]', 'Description':'kicks the user from the server and sends him a message', 'Type':'Admin'}
+}
+async def kick(client, message, arg):
     if await perm.have_permission(message.author) == 2:
         string = arg.split(' ')
 

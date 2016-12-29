@@ -1,5 +1,7 @@
 import random
-
+Helper = {
+    '!roll':{'Help':'!roll', 'Description':'Rolls the Dice', 'Type':'User'}
+}
 async def roll(client, message, *args):
     min = 1
     max = 6

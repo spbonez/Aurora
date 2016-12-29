@@ -1,5 +1,8 @@
 import json
 import src.permission as perm
+Helper = {
+    '!list':{'Help':'!list', 'Description':'lists the commands', 'Type':'User'}
+}
 async def list(client, message, args):
     with open('../config/config.json', 'r') as json_file:
         data = json.load(json_file)

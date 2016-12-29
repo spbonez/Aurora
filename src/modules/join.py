@@ -1,6 +1,11 @@
 import src.permission as perm
 import json
-
+Helper = {
+    '!join':{'Help':'!join [rolename] or !join [rolename] [rolename] and so on', 'Description':'adds a cosmetic role to you, you can add multuple roles at the same time', 'Type':'User'},
+    '!addlockedrole':{'Help':'!addlockedrole [rolename] or !addlockedrole [rolename] [rolename] and so on', 'Description':'locks a role or multiple roles from join', 'Type':'Admin'},
+    '!showroles':{'Help':'!showroles', 'Description':'!shows the available roles', 'Type':'User'},
+    '!leave':{'Help':'!leave [rolename] or !leave [rolename] [rolename] and so on', 'Description':'leaves the cosmetic role or roles', 'Type':'User'}
+}
 async def join(client, message, arg):
     arg = arg.split(',')
     arg = [v.replace(' ', '') for v in arg]
@@ -15,7 +20,7 @@ async def join(client, message, arg):
         elif str(role.name.lower()) in data['Servers'][str(message.server)]['Locked_Roles']:
             await client.send_message(message.channel, role.name + ' requires admin approval')
 
-async def _addlockedrole(client, message, arg):
+async def addlockedrole(client, message, arg):
 
     if perm.have_permission(message.author) == 2:
         arg = arg.split(',')

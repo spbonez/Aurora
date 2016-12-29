@@ -1,35 +1,29 @@
+import json
+import src.permission as perm
+Helper = {
+    '!help':{'Help':'!help [!command]', 'Description':'display usage and description', 'Type':'User'}
+}
 async def help(client, message, *args):
-    useage = 'Usage:\n'
-    description = 'Description:\n'
+    useage = "**Usage:**\n"
+    description = "**Description:**\n"
     cmd = args[0]
+    if cmd == '':
+        cmd='!help'
+    with open('../config/config.json', 'r') as json_file:
+        data = json.load(json_file)
+    json_file.close()
 
-    if cmd == 'ban':
-        helptext = '```\n!' + cmd + ' [@user] [Message]\n```'
-        destext = '```\n[!' + cmd + '] bans a member, a reason will be sent to the member\n```'
-    elif cmd == 'hi':
-        helptext = '```\n!' + cmd + '\n```'
-        destext = '```\n[!' + cmd + '] bot replies with a hi\n```'
-    elif cmd == 'info':
-        helptext = '```\n!' + cmd + '\n!' + cmd + ' Update [Message]```'
-        destext = '```\n[!' + cmd + '] shows or updates the bot info\n```'
-    elif cmd == 'kick':
-        helptext = '```\n!' + cmd + ' [@user] [Message]\n```'
-        destext = '```\n[!' + cmd + '] kicks a member, a reason will be sent to the member\n```'
-    elif cmd == 'mute':
-        helptext = '```\n!' + cmd + ' [@user]\n```'
-        destext = '```\n[!' + cmd + '] mutes a member\n```'
-    elif cmd == 'unmute':
-        helptext = '```\n!' + cmd + ' [@user]\n```'
-        destext = '```\n[!' + cmd + '] unmute as member\n```'
-    elif cmd == 'roll':
-        helptext = '```\n!' + cmd + '\n```'
-        destext = '```\n[!' + cmd + '] rolls a dice from 1 to 6\n```'
-    elif cmd == 'list':
-        helptext = '```\n!' + cmd + '\n```'
-        destext = '```\n[!' + cmd + '] list the available commands\n```'
+    cmds = data['Helper']
+    if cmd in cmds:
+        if cmds[cmd]['Help']=='':
+            helpmessage = 'Sorry. But the requested Command got no help information.'
+        else:
+            if cmds[cmd]['Type']=='Admin' and await perm.have_permission(message.author) == 2 :
+                helpmessage =useage+ "```"+ cmds[cmd]['Help'] + "```\n" + description+"```"+cmds[cmd]['Description']+"```"+"\n**Type of Command:**\n```"+cmds[cmd]['Type']+" Command```"
+            elif cmds[cmd]['Type']=='User':
+                helpmessage = useage + "```" + cmds[cmd]['Help'] + "```\n" + description + "```" + cmds[cmd]['Description'] + "```" + "\n**Type of command:**\n```" + cmds[cmd]['Type'] + " command```"
+            else:
+                helpmessage = 'Sorry. That Command is for Administrators only only'
     else:
-        helptext= '```\n!help [command_name]\n !\n```'
-        destext= '```\n[!help] display the Usage and Description of the command\n```'
-
-    helpmessage = useage + helptext + description + destext
+        helpmessage = 'Sorry. But the requested Command is not found'
     await client.send_message(message.channel, helpmessage)
