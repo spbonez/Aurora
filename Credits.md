@@ -8,6 +8,6 @@ Organization: [KvasirSG Development](http://kvasirsg.com/)
 <br>
 [sagooper](https://github.com/sagooper): Coder.
 <br>
-[Siren](https://github.com/LiaSiren): Coder
+[Siren](https://github.com/LiaSiren): Coder.
 <br>
 [Flix](https://github.com/IPFlix): Coder.
