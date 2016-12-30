@@ -28,6 +28,8 @@ for cmd in __all__:
     if '!'+cmd in Helper:
         if Helper['!'+cmd]['Type']=='Admin':
             data['Commands']['Admin_Cmd'].append('!'+cmd)
+        elif Helper['!'+cmd]['Type']=='Game':
+            data['Commands']['Game_Cmd'].append('!' + cmd)
         else:
             data['Commands']['User_Cmd'].append('!'+cmd)
 
