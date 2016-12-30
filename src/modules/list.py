@@ -22,7 +22,7 @@ async def list(client, message, args):
     UserCommand = UserCommand.replace("'", "")
     UserCommands = UserCommand.replace(', ', '\n')
 
-    GameCommand = str(usercmds)
+    GameCommand = str(gamecmds)
     GameCommand = GameCommand.replace('[', '')
     GameCommand = GameCommand.replace(']', '')
     GameCommand = GameCommand.replace("'", "")
@@ -31,7 +31,9 @@ async def list(client, message, args):
     print(admincmds)
     print(usercmds)
     if await perm.have_permission(message.author) == 2:
-        await client.send_message(message.channel, '**Admin Commands:**\n```' + AdminCommands + '```\n**User Commands:**\n```'+UserCommands+'```')
+        await client.send_message(message.channel,  '**Admin Commands:**\n```' + AdminCommands +
+                                                    '```\n**User Commands:**\n```'+UserCommands+
+                                                    '```\n**Game Commands:**\n```' + GameCommands + '```')
     else:
-        await client.send_message(message.channel, '**User Commands:**\n```' + UserCommands + '```')
-        await client.send_message(message.channel, '**Game Commands:**\n```' + GameCommands + '```')
+        await client.send_message(message.channel,  '**User Commands:**\n```' + UserCommands +
+                                                    '```\n**Game Commands:**\n```' + GameCommands + '```')

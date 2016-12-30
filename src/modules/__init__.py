@@ -23,7 +23,7 @@ with open('../config/config.json', 'r') as json_file:
 json_file.close()
 data['Helper'] ={}
 data['Helper'].update(Helper)
-data['Commands'] = {'User_Cmd': [], 'Admin_Cmd': []}
+data['Commands'] = {'User_Cmd': [], 'Admin_Cmd': [], 'Game_Cmd': []}
 for cmd in __all__:
     if '!'+cmd in Helper:
         if Helper['!'+cmd]['Type']=='Admin':
