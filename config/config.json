@@ -14,6 +14,8 @@
       "!cheers",
       "!help",
       "!hi",
+      "!roger",
+      "!sage",
       "!info",
       "!join",
       "!leave",
@@ -88,9 +90,19 @@
       "Help": "!mute [@User]",
       "Type": "Admin"
     },
+    "!roger": {
+      "Description": "Roger Roger",
+      "Help": "!roger",
+      "Type": "User"
+    },
     "!roll": {
       "Description": "Rolls the Dice",
       "Help": "!roll",
+      "Type": "User"
+    },
+    "!sage": {
+      "Description": "Sage favorite show",
+      "Help": "!sage",
       "Type": "User"
     },
     "!showroles": {

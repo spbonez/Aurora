@@ -8,19 +8,41 @@ Helper = {
 }
 async def join(client, message, arg):
     arg = arg.split(',')
+    args = []
     for v in arg:
         if v.startswith(' '):
-            v = v[1:]
+            args.append(v[1:])
+        else:
+            args.append(v)
+    print(args)
 
     with open('../config/config.json', 'r') as json_file:
         data = json.load(json_file)
 
+    def check(msg):
+        if msg.content == '#Agree' or msg.content == '#agree':
+            return True
+        else:
+            return False
+
     for role in message.server.roles:
-        if str(role.name.lower()) in arg \
-                and str(role.name.lower()) not in data['Servers'][str(message.server)]['Locked_Roles']:
+        if str(role.name.lower()) in args \
+                and str(role.name.lower()) not in data['Servers'][str(message.server)]['Locked_Roles'] \
+                and str(role.name.lower()) != 'mature/nsfw(18+)':
             await client.add_roles(message.author, role)
-        elif str(role.name.lower()) in data['Servers'][str(message.server)]['Locked_Roles'] and str(role.name.lower()) in arg:
+        elif str(role.name.lower()) in data['Servers'][str(message.server)]['Locked_Roles'] \
+                and str(role.name.lower()) in args:
             await client.send_message(message.channel, role.name + ' requires admin approval')
+        elif str(role.name.lower()) == 'mature/nsfw(18+)':
+            await client.send_message(message.channel, 'By joining this role you accept you are at least 18 years old.'
+                                                       '\nType #Agree to accept the term')
+            msg = await client.wait_for_message(timeout=30, author=message.author, channel=message.channel, check=check)
+            if msg is not None:
+                await client.send_message(message.channel, 'You have now joined ' + str(role.name))
+                await client.add_roles(message.author, role)
+            else:
+                await client.send_message(message.channel, 'Your time have ended!')
+
 
 async def addlockedrole(client, message, arg):
 
