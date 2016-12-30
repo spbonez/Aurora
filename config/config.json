@@ -2,7 +2,7 @@
   "Commands": {
     "Admin_Cmd": [
       "!ban",
-      "!makemerich",
+      "!luke",
       "!addlockedrole",
       "!kick",
       "!mute",
@@ -78,9 +78,9 @@
       "Help": "!list",
       "Type": "User"
     },
-    "!makemerich": {
+    "!luke": {
       "Description": "Sage is a moron",
-      "Help": "!makemerich",
+      "Help": "!bob",
       "Type": "Admin"
     },
     "!mute": {
@@ -124,12 +124,28 @@
     },
     "Not Enough RAM": {
       "Locked_Roles": {
+        "administrative adviser": "Administrative Adviser",
         "administrators": "Administrators",
         "bat_member": "BAT_MEMBER",
         "flixbot": "FlixBot",
+        "flixbot admin": "Flixbot Admin",
         "founders": "Founders",
+        "genie": "Genie",
+        "green power ranger": "Green Power Ranger",
+        "it guru": "IT Guru",
+        "it guys": "IT Guys",
         "knight": "Knight",
-        "selene": "Selene"
+        "kvasirsg development member": "KvasirSG Development Member",
+        "m.d": "M.D",
+        "muted": "Muted",
+        "purple power ranger": "Purple Power Ranger",
+        "rank master": "RANK MASTER",
+        "red power ranger": "Red Power Ranger",
+        "selene": "Selene",
+        "that drunk gal": "That Drunk Gal",
+        "that drunk guy": "That Drunk Guy",
+        "the twins": "The Twins",
+        "too many ranks": "Too Many Ranks"
       },
       "Roles": {
         "<3": "<3",
@@ -146,7 +162,7 @@
         "dorpboxxer": "DORPBOXXER",
         "dropboxxer": "DROPBOXXER",
         "flixbot": "FlixBot",
-        "flixbot admin": "Flixbot Admin.",
+        "flixbot admin": "Flixbot Admin",
         "founders": "Founders",
         "gamers": "Gamers",
         "genie": "Genie",
@@ -165,7 +181,6 @@
         "knight": "Knight",
         "kvasirsg development member": "KvasirSG Development Member",
         "latexer": "LaTeXer",
-        "love birds": "Love birds",
         "lua": "LUA",
         "m.d": "M.D",
         "mature/nsfw(18+)": "Mature/NSFW(18+)",
@@ -181,6 +196,7 @@
         "red power ranger": "Red Power Ranger",
         "ruby": "RUBY",
         "russian": "Russian",
+        "sage": "Sage",
         "selene": "Selene",
         "spotify": "Spotify",
         "sql": "SQL",

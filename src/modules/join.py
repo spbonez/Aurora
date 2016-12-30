@@ -19,16 +19,20 @@ async def join(client, message, arg):
         if str(role.name.lower()) in arg \
                 and str(role.name.lower()) not in data['Servers'][str(message.server)]['Locked_Roles']:
             await client.add_roles(message.author, role)
-        elif str(role.name.lower()) in data['Servers'][str(message.server)]['Locked_Roles']:
+        elif str(role.name.lower()) in data['Servers'][str(message.server)]['Locked_Roles'] and str(role.name.lower()) in arg:
             await client.send_message(message.channel, role.name + ' requires admin approval')
 
 async def addlockedrole(client, message, arg):
 
-    if perm.have_permission(message.author) == 2:
+    if await perm.have_permission(message.author) == 2:
         arg = arg.split(',')
+        args = []
         for v in arg:
             if v.startswith(' '):
-                v = v[1:]
+                args.append(v[1:])
+            else:
+                args.append(v)
+        print(args)
 
         with open('../config/config.json', 'r') as json_file:
             data = json.load(json_file)
@@ -36,7 +40,7 @@ async def addlockedrole(client, message, arg):
 
         with open('../config/config.json', 'w') as json_file:
             for role in message.server.roles:
-                if str(role.name.lower()) in arg:
+                if str(role.name.lower()) in args:
                     data['Servers'][str(message.server)]['Locked_Roles'][str(role.name.lower())] = str(role.name)
 
             json.dump(data, json_file, indent=2, sort_keys=True)

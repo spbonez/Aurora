@@ -68,6 +68,33 @@ def new_server(server):
         cnx.commit()
 
 
-async def get(server, member, item):
+async def get(server, member):
+    query = ("SELECT * FROM " + server.name.replace(' ', '_') + " WHERE user_id = " + str(member.id))
 
-    query = ("SELECT " + item + " FROM " + server.name.replace(' ', '_'))
+    try:
+        cursor.execute(query)
+    except mysql.connector.Error as err:
+        print(err)
+
+    row = cursor.fetchone()
+
+    result = {'Name': row[0], 'User_id': row[1], 'Balance': row[2], 'Loan': row[3],
+              'Winnings': row[4], 'Losses': row[5], 'Status': row[6]}
+
+    return result
+
+
+def update(server, member, items, values):
+
+    update_set = ''
+    for item, value in zip(items, values):
+        if type(value) == int:
+            update_set = update_set + ' ' + server.name.replace(' ', '_') + '.' + str(item) + ' = ' + str(value) + ','
+        else:
+            update_set = update_set + ' ' + server.name.replace(' ', '_') + '.`' + str(item) + '`' + ' = "' + str(value) + '",'
+    update_set = update_set[:-1]
+
+    query = ("UPDATE " + server.name.replace(' ', '_') + " SET" + update_set + " WHERE user_id = " + str(member.id))
+
+    print(query)
+    cursor.execute(query)
