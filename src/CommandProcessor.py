@@ -6,7 +6,8 @@ def begin(client):
     @client.event
     async def on_message(message):
         if message.author != client.user:
-            print('New message from:', message.author, 'in Channel:', message.channel, '\nContent:', message.content)
+            print('New message from:', message.author, 'in server', message.server,
+                  'in Channel:', message.channel, '\nContent:', message.content)
 
         if message.content.startswith('!'):
             if await perm.have_permission(message.author):
@@ -21,4 +22,5 @@ def begin(client):
                     await client.send_message(message.channel, 'Sry that is not a command,'
                                                                ' did you spell it right ?')
             else:
-                await client.send_message(message.channel, 'Im sry, but you dont have permission to use commands')
+                await client.send_message(message.channel, 'Im sry, but you dont have permission '
+                                                           'to use commands')

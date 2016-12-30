@@ -25,6 +25,7 @@ class Bot:
             for server in client.servers:
                 print(server)
             print('------------------')
+            await utilis.morning_run(client)
             CP.begin(client)
             database.connect()
 

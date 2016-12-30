@@ -98,3 +98,4 @@ def update(server, member, items, values):
 
     print(query)
     cursor.execute(query)
+    cnx.commit()

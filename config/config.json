@@ -2,7 +2,6 @@
   "Commands": {
     "Admin_Cmd": [
       "!ban",
-      "!luke",
       "!addlockedrole",
       "!kick",
       "!mute",
@@ -127,7 +126,7 @@
       "Roles": {
         "@everyone": "@everyone",
         "flixbot": "FlixBot",
-        "flixbot admin.": "Flixbot Admin.",
+        "flixbot admin": "Flixbot Admin",
         "founder": "Founder",
         "member": "Member",
         "muted": "Muted",
@@ -193,6 +192,8 @@
         "knight": "Knight",
         "kvasirsg development member": "KvasirSG Development Member",
         "latexer": "LaTeXer",
+        "love birds(k+c)": "Love birds(K+C)",
+        "love birds(s+q)": "Love birds(S+Q)",
         "lua": "LUA",
         "m.d": "M.D",
         "mature/nsfw(18+)": "Mature/NSFW(18+)",
@@ -219,6 +220,20 @@
         "the twins": "The Twins",
         "too many ranks": "Too Many Ranks",
         "trelloer": "Trelloer"
+      }
+    },
+    "Sage Testing LAB": {
+      "Locked_Roles": {
+        "flixbot admin": "Flixbot Admin"
+      },
+      "Roles": {
+        "@everyone": "@everyone",
+        "bot": "Bot",
+        "flixbot": "FlixBot",
+        "flixbot admin": "Flixbot Admin",
+        "muted": "Muted",
+        "new role": "new role",
+        "verified": "Verified"
       }
     }
   }

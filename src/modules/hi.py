@@ -7,7 +7,7 @@ async def hi(client, message, *args):
     await client.send_message(message.channel, 'Hi!')
 
 async def roger(client, message, args):
-    file = '../img/rogerroger.jpg'
+    file = '../img/rogerroger.png'
     await client.send_file(message.channel, file)
 
 async def sage(client, message, args):

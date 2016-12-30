@@ -44,7 +44,23 @@ async def new_role(role):
         json.dump(data, json_file, indent=2, sort_keys=True)
     json_file.close()
 
+async def morning_run(client):
+    servers = 0
+    roles = 0
+    with open('../config/config.json', 'r') as json_file:
+        data = json.load(json_file)
+    json_file.close()
 
+    for server in client.servers:
+        if server.name not in data['Servers']:
+            servers += 1
+            await first_run(client, server)
+        else:
+            for role in server.roles:
+                if role.name.lower() not in data['Servers'][str(server.name)]['Roles']:
+                    roles += 1
+                    await new_role(role)
 
+    print('Morning Run Finished: %(servers)s new servers, %(roles)s new roles.' % {'servers': servers, 'roles': roles})
 
 
