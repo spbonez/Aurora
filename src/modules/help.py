@@ -22,6 +22,8 @@ async def help(client, message, *args):
                 helpmessage =useage+ "```"+ cmds[cmd]['Help'] + "```\n" + description+"```"+cmds[cmd]['Description']+"```"+"\n**Type of Command:**\n```"+cmds[cmd]['Type']+" Command```"
             elif cmds[cmd]['Type']=='User':
                 helpmessage = useage + "```" + cmds[cmd]['Help'] + "```\n" + description + "```" + cmds[cmd]['Description'] + "```" + "\n**Type of command:**\n```" + cmds[cmd]['Type'] + " command```"
+            elif cmds[cmd]['Type']=='Game':
+                helpmessage = useage + "```" + cmds[cmd]['Help'] + "```\n" + description + "```" + cmds[cmd]['Description'] + "```" + "\n**Type of command:**\n```" + cmds[cmd]['Type'] + " command```"
             else:
                 helpmessage = 'Sorry. That Command is for Administrators only only'
     else:
