@@ -9,17 +9,19 @@
       "!sleave",
       "!unmute"
     ],
+    "Game_Cmd": [],
     "User_Cmd": [
       "!cheers",
       "!help",
       "!hi",
-      "!roger",
-      "!sage",
       "!info",
       "!join",
       "!leave",
       "!showroles",
       "!list",
+      "!magnets",
+      "!roger",
+      "!sage",
       "!roll"
     ]
   },
@@ -83,6 +85,11 @@
       "Description": "Sage is a moron",
       "Help": "!bob",
       "Type": "Admin"
+    },
+    "!magnets": {
+      "Description": "Reason: MAGNETS!",
+      "Help": "!magnets",
+      "Type": "User"
     },
     "!mute": {
       "Description": "mutes the user",
