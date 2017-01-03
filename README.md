@@ -3,6 +3,7 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/KvasirSGDevelopment/FlixBot/blob/master/LICENSE.md) 
 [![python](https://img.shields.io/badge/Python-5.3.2-blue.svg)](https://www.python.org/)
 [![SQLConnector](https://img.shields.io/badge/MySQL%20--%20Connector-2.1.4-blue.svg)](https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html)
+[![label](https://img.shields.io/github/issues-raw/badges/shields/website.svg)](https://github.com/KvasirSGDevelopment/FlixBot/issues)
 <br>
 # FlixBot
 Official "KvasirSG Development" Discord Bot
