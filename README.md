@@ -10,7 +10,7 @@ Official "KvasirSG Development" Discord Bot
 ## Requirements
 
 1. [Python 3](https://www.python.org/) 
-2. [Python MySQL Connector](https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html) `mysql.connector`
+2. [Python MySQL Connector](https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html) `pip install mysql.connector`
 2. discord.py python package `pip install discord.py`
 
 ## Install and run
