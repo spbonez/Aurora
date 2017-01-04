@@ -72,6 +72,9 @@ async def get(server, member):
     query = ("SELECT * FROM " + server.name.replace(' ', '_') + " WHERE user_id = " + str(member.id))
 
     try:
+        cnx.reconnect()
+        # close()
+        # connect()
         cursor.execute(query)
     except mysql.connector.Error as err:
         print(err)

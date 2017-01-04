@@ -9,7 +9,12 @@
       "!sleave",
       "!unmute"
     ],
-    "Game_Cmd": [],
+    "Game_Cmd": [
+      "!bet",
+      "!chance",
+      "!join_games",
+      "!spin"
+    ],
     "User_Cmd": [
       "!cheers",
       "!help",
@@ -35,6 +40,16 @@
       "Description": "bans a user and sends him a message",
       "Help": "!ban [@User] [Message]",
       "Type": "Admin"
+    },
+    "!bet": {
+      "Description": "Gamble you money with no security what so ever\nthe higher odds you take, the bigger your reward will be",
+      "Help": "!chance or !bet [Amount] [Odds]",
+      "Type": "Game"
+    },
+    "!chance": {
+      "Description": "Gamble you money with no security what so ever\nthe higher odds you take, the bigger your reward will be",
+      "Help": "!chance or !bet [Amount] [Odds]",
+      "Type": "Game"
     },
     "!cheers": {
       "Description": "",
@@ -66,6 +81,11 @@
       "Help": "!join [rolename] or !join [rolename] [rolename] and so on",
       "Type": "User"
     },
+    "!join_games": {
+      "Description": "Jump in the wonderful world of Games, and get your starting bonus of 500 bucks!!!\nThis is the sure way to get yourself the biggestGambling Addiction in the world!!\nSo suit up! empty that piggy bank of yours,and start gambling!!",
+      "Help": "!join_games",
+      "Type": "Game"
+    },
     "!kick": {
       "Description": "kicks the user from the server and sends him a message",
       "Help": "!kick [@User] [Message]",
@@ -80,11 +100,6 @@
       "Description": "lists the commands",
       "Help": "!list",
       "Type": "User"
-    },
-    "!luke": {
-      "Description": "Sage is a moron",
-      "Help": "!bob",
-      "Type": "Admin"
     },
     "!magnets": {
       "Description": "Reason: MAGNETS!",
@@ -121,6 +136,11 @@
       "Help": "!sleave",
       "Type": "Admin"
     },
+    "!spin": {
+      "Description": "Spin the wheal of furtune, try your luck. agian, the the more you risk, the higher payday.",
+      "Help": "!spin [number of spins]x[money to throw on each spin]",
+      "Type": "Game"
+    },
     "!unmute": {
       "Description": "unmute the User",
       "Help": "!unmute [@User]",
@@ -137,7 +157,8 @@
         "founder": "Founder",
         "member": "Member",
         "muted": "Muted",
-        "pink": "Pink"
+        "pink": "Pink",
+        "tech": "Tech"
       }
     },
     "Not Enough RAM": {
