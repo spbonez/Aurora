@@ -1,6 +1,7 @@
 # coding=utf-8
 class User:
     Token = 'Token Here'
+    Name = 'Aurora'
 
 
 class Db:

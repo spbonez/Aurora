@@ -4,7 +4,7 @@
 [![python](https://img.shields.io/badge/Python-5.3.2-blue.svg)](https://www.python.org/)
 [![SQLConnector](https://img.shields.io/badge/MySQL%20--%20Connector-2.1.4-blue.svg)](https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html)
 <br>
-# FlixBot
+# Aurora
 Official "KvasirSG Development" Discord Bot
 
 ## Requirements

@@ -1,7 +1,8 @@
 import discord.utils as utils
+from config.auth import User
 
-Bot_Name = 'FlixBot'
-Admin_Name = 'Flixbot Admin'
+Bot_Name = User.Name
+Admin_Name = User.Name + ' Admin'
 Muted = 'Muted'
 Everyone = '@everyone'
 

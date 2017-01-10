@@ -9,5 +9,3 @@ Organization: [KvasirSG Development](http://kvasirsg.com/)
 [sagooper](https://github.com/sagooper): Coder.
 <br>
 [LiaSiren](https://github.com/LiaSiren): Coder.
-<br>
-[Flix](https://github.com/IPFlix): Coder.

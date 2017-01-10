@@ -149,14 +149,19 @@
   },
   "Servers": {
     "KvasirSG Development": {
-      "Locked_Roles": {},
+      "Locked_Roles": {
+        "aurora admin": "Aurora Admin"
+      },
       "Roles": {
         "@everyone": "@everyone",
+        "aurora": "Aurora",
+        "aurora admin": "Aurora Admin",
         "flixbot": "FlixBot",
         "flixbot admin": "Flixbot Admin",
         "founder": "Founder",
         "member": "Member",
         "muted": "Muted",
+        "new role": "new role",
         "pink": "Pink",
         "tech": "Tech"
       }
