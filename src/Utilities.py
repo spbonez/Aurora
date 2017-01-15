@@ -1,7 +1,7 @@
 import json
 import os
 from asyncio import sleep
-import discord.utils as utils
+import discord.utils as Dutil
 from src.permission import Admin_Name
 
 async def first_run(client, new_server):
@@ -13,6 +13,9 @@ async def first_run(client, new_server):
         with open('../config/config.json', 'r') as json_file:
             data = json.load(json_file)
         json_file.close()
+
+        if 'Servers' not in data:
+            data['Servers'] = {}
 
         with open('../config/config.json', 'w') as json_file:
             data['Servers'][str(new_server)] = {'Roles': {}, 'Locked_Roles': {}}
@@ -35,7 +38,7 @@ async def first_run(client, new_server):
 
 async def new_role(role):
     await sleep(15)
-    print('New role added:', role.name, role.server)
+    print('New role added:', role.name, ' in server:', role.server)
     with open('../config/config.json', 'r') as json_file:
         data = json.load(json_file)
     json_file.close()
@@ -47,9 +50,13 @@ async def new_role(role):
 async def morning_run(client):
     servers = 0
     roles = 0
+
     with open('../config/config.json', 'r') as json_file:
         data = json.load(json_file)
     json_file.close()
+
+    if 'Servers' not in data:
+        data['Servers'] = {}
 
     for server in client.servers:
         if server.name not in data['Servers']:

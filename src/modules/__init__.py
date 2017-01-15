@@ -1,5 +1,6 @@
 import pkgutil
 import inspect
+import os
 import json
 from .help import Helper as H_Helper
 
@@ -18,10 +19,14 @@ for loader, name, is_pkg in pkgutil.walk_packages(__path__):
             globals()[name] = value
             __all__.append(name)
 
-with open('../config/config.json', 'r') as json_file:
-    data = json.load(json_file)
-json_file.close()
-data['Helper'] ={}
+if os.stat('../config/config.json').st_size > 0:
+    with open('../config/config.json', 'r') as json_file:
+        data = json.load(json_file)
+    json_file.close()
+else:
+    data = {}
+
+data['Helper'] = {}
 data['Helper'].update(Helper)
 data['Commands'] = {'User_Cmd': [], 'Admin_Cmd': [], 'Game_Cmd': []}
 for cmd in __all__:

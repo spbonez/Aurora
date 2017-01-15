@@ -11,9 +11,9 @@ def connect():
         cursor = cnx.cursor()
     except mysql.connector.Error as err:
         if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
-            print("Something is wrong with user name or password")
+            print("Database Error! Something is wrong with user name or password")
         elif err.errno == errorcode.ER_BAD_DB_ERROR:
-            print("Database does not exist")
+            print("Database Error! Database does not exist")
         else:
             print(err)
 
@@ -23,12 +23,12 @@ def close():
         cnx.close()
         cursor.close()
     except NameError:
-        print('No connection to close')
+        print('Database Error! No connection to close')
 
 
 def new_server(server):
     table = (
-        "CREATE TABLE `%(name)s` ("
+        "CREATE TABLE `{name}` ("
         "  `user` varchar(30) NOT NULL,"
         "  `user_id` varchar(30) NOT NULL,"
         "  `balance` int(7) NOT NULL,"
@@ -36,7 +36,7 @@ def new_server(server):
         "  `winnings` int(7) NOT NULL,"
         "  `losses` int(7) NOT NULL,"
         "  `status` enum('Active','Inactive') NOT NULL"
-        ") ENGINE=InnoDB" % {'name': server.name.replace(' ', '_')})
+        ") ENGINE=InnoDB".format(**{'name': server.name.replace(' ', '_')}))
 
     add_member = ("INSERT INTO " + server.name.replace(' ', '_') + " "
                   "(user, user_id, balance, loan, winnings, losses, status) "
