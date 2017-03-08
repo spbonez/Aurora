@@ -1,5 +1,5 @@
 [![Page-Home](https://img.shields.io/badge/Page-Home-green.svg)]()
-[![Page-Commands](https://img.shields.io/badge/Page-Commands-purple.svg)](/commands) 
+[![Page-Commands](https://img.shields.io/badge/Page-Commands-red.svg)](/Aurora/commands)
 <br>
 # Aurora
 Official "KvasirSG Development" Administrative Discord Bot
