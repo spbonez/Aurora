@@ -2,37 +2,51 @@
 ## Admin Commands
 <details>
  <summary>!ban</summary>
-  * Description: bans a user and sends him a message.<br>
-  * Usage: !ban [@User] [Message]
+ <ul>
+  <li>Description: bans a user and sends him a message.</li>
+  <li>Usage: !ban [@User] [Message]</li>
+  </ul>
 </details>
 <details>
  <summary>!addlockedrole</summary>
- * Description: locks a role or multiple roles from join.<br>
- * Usage: !addlockedrole [rolename] or !addlockedrole [rolename] [rolename] and so on.
+ <ul>
+ <li>Description: locks a role or multiple roles from join.</li>
+ <li>Usage: !addlockedrole [rolename] or !addlockedrole [rolename] [rolename] and so on.</li>
+ </ul>
   </details>
   <details>
  <summary>!kick</summary>
-  * Description: kicks the user from the server and sends him a message.<br>
-  * Usage: !kick [@User] [Message].
+ <ul>
+ <li>Description: kicks the user from the server and sends him a message.</li>
+  <li>Usage: !kick [@User] [Message].</li>
+  </ul>
   </details>
   <details>
  <summary>!mute</summary>
-  * Description: mutes the user.<br>
-  * Usage: !mute [@User].
+ <ul>
+ <li>Description: mutes the user.</li>
+  <li>Usage: !mute [@User].</li>
+  </ul>
   </details>
   <details>
  <summary>!fuckoff</summary>
- * Description: Yeah. The Bot is out!<br>
- * Usage: !fuckoff
+ <ul>
+ <li>Description: Yeah. The Bot is out!</li>
+ <li>Usage: !fuckoff</li>
+ </ul>
   </details>
   <details>
  <summary>!sleave</summary>
- * Description: And the bot left the server.<br>
- * Usage: !sleave.
+ <ul>
+ <li>Description: And the bot left the server.</li>
+ <li>Usage: !sleave.</li>
+ </ul>
   </details>
   <details>
   <summary>!unmute</summary>
-  * Description: unmute the User.<br>
-  * Usage: !unmute [@User].
+  <ul>
+  <li>Description: unmute the User.</li>
+  <li>Usage: !unmute [@User].</li>
+  </ul>
   </details>
   
