@@ -10,7 +10,7 @@ Official "KvasirSG Development" Administrative Discord Bot
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/KvasirSGDevelopment/FlixBot/blob/master/LICENSE.md) 
 [![python](https://img.shields.io/badge/Python-3.6.0-blue.svg)](https://www.python.org/downloads/release/python-360/)
 [![SQLConnector](https://img.shields.io/badge/MySQL%20--%20Connector-2.1.4-blue.svg)](https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html)
-<br>
+<br><br>
 [![Aurora State](https://img.shields.io/badge/State-Released-green.svg)]()
 [![Aurora Status](https://img.shields.io/badge/Current Status:-Offline/Development-red.svg)]()
 [![Aurora Development](https://img.shields.io/badge/Development-Heavy-yellow.svg)]()
