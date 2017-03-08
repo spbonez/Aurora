@@ -1,6 +1,9 @@
-[![Page-Home](https://img.shields.io/badge/Page-Home-red.svg)](https://kvasirsgdevelopment.github.io/Aurora)
-[![Page-Commands](https://img.shields.io/badge/Page-Commands-green.svg)](/Aurora/commands)
-<br>
+<div class="navbar">
+      <ul>
+        <li><a href="https://kvasirsgdevelopment.github.io/Aurora/">Home</a></li>
+        <li><a class="active" href="https://kvasirsgdevelopment.github.io/Aurora/commands">Commands</a></li>
+      </ul>
+</div>
 # Commands
 ## Admin Commands
 <details>
