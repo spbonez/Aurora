@@ -130,11 +130,16 @@ dt {
   font-style: italic;
   font-weight: bold;
 }
-.navbar ul {
-    text-align: center; 
-    list-style-type: none;
+.navbar {
+    text-align: center;
+    background-color: #333;
     margin: auto;
     width: 100%;
+}
+.navbar ul {
+     
+    list-style-type: none;
+    margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #151515;
