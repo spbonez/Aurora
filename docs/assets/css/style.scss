@@ -99,7 +99,7 @@ dt { font-style: italic; font-weight: bold; }
 
 ul li { list-style: none; }
 
-ul li:before { content: ">>"; font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace; font-size: 13px; color: #b5e853; margin-left: -37px; margin-right: 21px; line-height: 16px; }
+#main_content ul li:before { content: ">>"; font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace; font-size: 13px; color: #b5e853; margin-left: -37px; margin-right: 21px; line-height: 16px; }
 
 blockquote { color: #aaa; padding-left: 10px; border-left: 1px dotted #666; }
 
@@ -140,7 +140,7 @@ summary { font-size: 18px; border-style: none; font-weight: normal; font-family:
 
 .navbar { text-align: center; }
 
-.navbar ul { display: inline-block; list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #1a1a1a; }
+.navbar ul {list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color: #1a1a1a; }
 
 .navbar li { float: left; }
 
