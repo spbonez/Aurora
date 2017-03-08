@@ -130,8 +130,12 @@ dt {
   font-style: italic;
   font-weight: bold;
 }
-.navbar ul {
+.navbar {
     text-align: center;
+    margin: auto;
+    width: 100%;
+}
+.navbar ul {
     list-style-type: none;
     margin:0;
     padding: 0;
