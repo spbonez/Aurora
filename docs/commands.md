@@ -1,3 +1,6 @@
+[![Page-Home](https://img.shields.io/badge/Page-Home-red.svg)]()
+[![Page-Commands](https://img.shields.io/badge/Page-Commands-green.svg)](/Aurora/commands)
+<br>
 # Commands
 ## Admin Commands
 <details>
