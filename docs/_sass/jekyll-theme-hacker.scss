@@ -135,7 +135,7 @@ dt {
   list-style: none;
 }
 
-#main_content ul li:before {
+#main_content ul li:before:not(.navbar) {
   content: ">>";
   font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-size: 13px;
