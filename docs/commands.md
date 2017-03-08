@@ -2,7 +2,7 @@
 ## Admin Commands
 <details>
  <summary>!ban</summary>
-  Description: bans a user and sends him a message.<br>
+  Description: ```bans a user and sends him a message```.<br>
   Usage: !ban [@User] [Message]
 </details>
 <details>
