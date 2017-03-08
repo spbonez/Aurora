@@ -1,7 +1,7 @@
 <div class="navbar">
       <ul>
         <li><a class="active" href="https://kvasirsgdevelopment.github.io/Aurora/">Home</a></li>
-        <li><aref="https://kvasirsgdevelopment.github.io/Aurora/commands">Commands</a></li>
+        <li><a href="https://kvasirsgdevelopment.github.io/Aurora/commands">Commands</a></li>
       </ul>
 </div>
 # Aurora
