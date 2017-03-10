@@ -1,4 +1,4 @@
-[![Aurora Version](https://img.shields.io/badge/Aurora Version-1.1.0:01-blue.svg)](https://github.com/KvasirSGDevelopment/Aurora/blob/master/Version.md) 
+[![Aurora Version](https://img.shields.io/badge/Aurora Version-1.1.0:02-blue.svg)](https://github.com/KvasirSGDevelopment/Aurora/blob/master/Version.md)
 [![website](https://img.shields.io/badge/Website-KvasigSG-blue.svg)](http://kvasirsg.com/) 
 [![contributors](https://img.shields.io/badge/TeamMembers-6-blue.svg)](https://github.com/KvasirSGDevelopment/FlixBot/graphs/contributors) 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/KvasirSGDevelopment/FlixBot/blob/master/LICENSE.md) 

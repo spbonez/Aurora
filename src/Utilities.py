@@ -37,7 +37,6 @@ async def first_run(client, new_server):
 
 
 async def new_role(role):
-    await sleep(15)
     print('New role added:', role.name, ' in server:', role.server)
     with open('../config/config.json', 'r') as json_file:
         data = json.load(json_file)
@@ -46,6 +45,32 @@ async def new_role(role):
         data['Servers'][str(role.server)]['Roles'][str(role.name.lower())] = str(role.name)
         json.dump(data, json_file, indent=2, sort_keys=True)
     json_file.close()
+
+async def role_removed(role):
+    print('Role', role.name, ' was removed in', role.server, '!')
+    with open('../config/config.json', 'r') as json_file:
+        data = json.load(json_file)
+    json_file.close()
+
+    data['Servers'][str(role.server)]['Roles'].pop(str(role.name.lower()))
+
+    with open('../config/config.json', 'w') as json_file:
+        json.dump(data, json_file, indent=2, sort_keys=True)
+    json_file.close()
+
+async def role_change(role_before, role_after):
+    print('Role Changed! ', role_before.name, ' was changed to ', role_after.name, ' in server ', role_after.server)
+    with open('../config/config.json', 'r') as json_file:
+        data = json.load(json_file)
+    json_file.close()
+
+    data['Servers'][str(role_before.server)]['Roles'].pop(str(role_before.name.lower()))
+    data['Servers'][str(role_after.server)]['Roles'][str(role_after.name.lower())] = str(role_after.name)
+
+    with open('../config/config.json', 'w') as json_file:
+        json.dump(data, json_file, indent=2, sort_keys=True)
+    json_file.close()
+
 
 async def morning_run(client):
     servers = 0
