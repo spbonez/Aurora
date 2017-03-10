@@ -38,6 +38,14 @@ class Bot:
         async def on_server_role_create(role):
             await utilis.new_role(role)
 
+        @client.event
+        async def on_server_role_delete(role):
+            await utilis.role_removed(role)
+
+        @client.event
+        async def on_server_role_update(before, after):
+            await utilis.role_change(before, after)
+
         client.run(self.Token)
 
 Bot().start()
