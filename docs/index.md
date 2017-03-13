@@ -1,6 +1,6 @@
 [![Aurora State](https://img.shields.io/badge/State-Released-green.svg)]()
-[![Aurora Version](https://img.shields.io/badge/Aurora Version-1.1.0:01-blue.svg)](https://github.com/KvasirSGDevelopment/Aurora/blob/master/Version.md)
-[![Aurora Status](https://img.shields.io/badge/Current Status:-Offline/Development-red.svg)]()
+[![Aurora Version](https://img.shields.io/badge/Aurora Version-1.1.0:02-blue.svg)](https://github.com/KvasirSGDevelopment/Aurora/blob/master/Version.md)
+[![Aurora Status](https://img.shields.io/badge/Current Status:-Development-yellow.svg)]()
 # Aurora
 Project Aurora is the Administrative Discord Bot by <a href="http://kvasirsg.com/">KvasirSG Development</a>.<br>
 on the project We got:
