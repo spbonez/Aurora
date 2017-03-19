@@ -87,9 +87,9 @@ a {
 }
 
 .page-header {
-  color: $header-heading-color;
+  color: #2e3136;
   text-align: center;
-  background-color: $header-bg-color;
+  background-color: #2e3136;
   background-image: url("../../img/Aurora_banner.png");
 
   @include large {
