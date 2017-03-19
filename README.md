@@ -16,4 +16,4 @@ Aurora is licensed under the <a href="https://github.com/KvasirSGDevelopment/Aur
 [![Not Enough RAM](https://discordapp.com/api/guilds/255100808658550785/embed.png?style=banner2)](https://discord.gg/ZZXVK3m)
 
 ## Add The Bot to your Server
-http://auroradocs.kvasirsg.com/add
+http://aurora.kvasirsg.com/add
