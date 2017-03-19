@@ -2,7 +2,7 @@ import asyncio
 import discord
 from discord.ext import commands
 
-#from src.login import bot
+from src.login import bot
 
 if not discord.opus.is_loaded():
     # the 'opus' library here is opus.dll on windows
