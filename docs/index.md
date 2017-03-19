@@ -11,7 +11,7 @@ on the project We got:
 </ul>
 
 ## How to get the bot?
-Adding the bot to your server: <a href="https://kvasirsgdevelopment.github.io/Aurora/add">Adding The Bot</a>
+Adding the bot to your server: <a href="add">Adding The Bot</a>
 
 ## Github Download
 Downloading the bot from our github is only to give an idea on how bots are coded. not for hosting it yourself.
@@ -20,8 +20,8 @@ Link on how to. is in the section below.
 
 ## Helpful Links and guides
 <ul>
-<li><a href="https://kvasirsgdevelopment.github.io/Aurora/download/">Download Aurora[For Development ONLY!]</a></li>
-<li><a href="https://kvasirsgdevelopment.github.io/Aurora/add">Adding The Bot</a></li>
-<li><a href="https://kvasirsgdevelopment.github.io/Aurora/commands">Commands</a></li>
-<li><a href="https://github.com/KvasirSGDevelopment/Aurora/issues">report issues</a></li>
+<li><a href="download/">Download Aurora[For Development ONLY!]</a></li>
+<li><a href="add">Adding The Bot</a></li>
+<li><a href="commands">Commands</a></li>
+<li><a href="issues">report issues</a></li>
 </ul>
