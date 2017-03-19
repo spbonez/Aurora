@@ -7,7 +7,6 @@ from src.permission import Admin_Name
 async def first_run(client, new_server):
 
     print('New Server was joined! \n', new_server)
-    await client.create_role(new_server, name=Admin_Name)
 
     if os.stat('../config/config.json').st_size > 0:
         with open('../config/config.json', 'r') as json_file:
@@ -34,6 +33,8 @@ async def first_run(client, new_server):
         with open('../config/config.json', 'w') as json_file:
             json.dump(data, json_file, indent=2, sort_keys=True)
         json_file.close()
+
+    await client.create_role(new_server, name=Admin_Name)
 
 
 async def new_role(role):
