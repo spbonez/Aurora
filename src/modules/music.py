@@ -2,7 +2,7 @@ import asyncio
 import discord
 from discord.ext import commands
 
-from src.Login import bot
+from src.login import bot
 
 if not discord.opus.is_loaded():
     # the 'opus' library here is opus.dll on windows
@@ -63,6 +63,7 @@ class VoiceState:
             await self.bot.send_message(self.current.channel, 'Now playing ' + str(self.current))
             self.current.player.start()
             await self.play_next_song.wait()
+
 
 class Music:
     """Voice related commands.
