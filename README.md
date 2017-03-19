@@ -8,14 +8,8 @@
 # Aurora
 Official "KvasirSG Development" Discord Bot
 
-## Requirements
+## Find us at:
+[![Not Enough RAM](https://discordapp.com/api/guilds/255100808658550785/embed.png?style=banner2)](https://discord.gg/ZZXVK3m)
 
-1. [Python 3](https://www.python.org/) 
-2. [Python MySQL Connector](https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html) `pip install mysql.connector`
-2. discord.py python package `pip install discord.py`
-
-## Install and run
-
-1. Extract everything from the archive
-2. Rename `rm_auth.py` in `config` to `auth.py`
-3. Configure the bot in `auth.py`
+## Add The Bot to your Server
+http://auroradocs.kvasirsg.com/add
