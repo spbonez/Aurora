@@ -1,3 +1,4 @@
+import src.modules as modules
 import asyncio
 import discord
 from discord.ext import commands
