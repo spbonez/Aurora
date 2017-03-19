@@ -15,14 +15,8 @@ on the project We got:
 ## How to get the bot?
 Adding the bot to your server: <a href="add">Adding The Bot</a>
 
-## Github Download
-Downloading the bot from our github is only to give an idea on how bots are coded. not for hosting it yourself.
-if you want to use our bot as a template you need to rename it.<br>
-Link on how to. is in the section below.
-
 ## Helpful Links and guides
 <ul>
-<li><a href="download/">Download Aurora[For Development ONLY!]</a></li>
 <li><a href="add">Adding The Bot</a></li>
 <li><a href="commands">Commands</a></li>
 <li><a href="issues">report issues</a></li>
