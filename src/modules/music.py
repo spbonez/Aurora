@@ -239,3 +239,4 @@ class Music:
 
 def add_to_bot(bot):
     bot.add_cog(Music(bot))
+    print("Music Updated!")
