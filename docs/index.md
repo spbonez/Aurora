@@ -9,6 +9,9 @@ on the project We got:
 <li>AliciaPeage: part of Coding and in charge of bot hosting security.</li>
 <li>Sage: Bringing the updates to the site as well as on kvasirsg.com</li>
 </ul>
+## Find Us At:
+## Find us at:
+[![Not Enough RAM](https://discordapp.com/api/guilds/255100808658550785/embed.png?style=banner2)](https://discord.gg/ZZXVK3m)
 
 ## How to get the bot?
 Adding the bot to your server: <a href="add">Adding The Bot</a>
