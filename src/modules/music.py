@@ -2,8 +2,6 @@ import asyncio
 import discord
 from discord.ext import commands
 
-#from src.login import bot
-
 if not discord.opus.is_loaded():
     # the 'opus' library here is opus.dll on windows
     # or libopus.so on linux in the current directory
@@ -239,4 +237,9 @@ class Music:
 
 def add_to_bot(bot):
     bot.add_cog(Music(bot))
-    print("Music Updated!")
+    print("Music Added to Bot!")
+
+
+def remove_from_bot(bot):
+    bot.remove_cog("Music")
+    print("Music Removed From Bot")

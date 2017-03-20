@@ -1,14 +1,14 @@
-import src.modules as modules
-from src.modules import music
+from src import Commands
 import asyncio
 import discord
+import os
 from discord.ext import commands
-
 from config.auth import User
 
-bot = commands.Bot(command_prefix=commands.when_mentioned_or('§'), description='A playlist example for discord.py')
+modulePath = os.getcwd() + "\modules"
 
-getattr(modules, "add_to_bot")(bot)
+bot = commands.Bot(command_prefix=commands.when_mentioned_or('§'), description='AuroraV2 DevBuild PreAlpha')
+Commands.load_all_modules(modulePath, bot)
 
 
 @bot.event
