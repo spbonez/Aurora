@@ -1,6 +1,6 @@
+import sys
+sys.path.append('/home/pi/KvasirDevelopment/Aurora/')
 from src import Commands
-import asyncio
-import discord
 import os
 from discord.ext import commands
 from config.auth import User
