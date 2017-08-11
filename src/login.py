@@ -3,6 +3,7 @@ from src import Commands
 import os
 from discord.ext import commands
 from config.auth import User
+from src import Watcher
 
 modulePath = os.path.join(os.getcwd(), "src", "modules")
 
@@ -15,4 +16,4 @@ async def on_ready():
     print('Logged in as:\n{0} (ID: {0.id})'.format(bot.user))
 
 bot.run(User.Token)
-
+Watcher.Watcher(bot)
