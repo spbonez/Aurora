@@ -1,7 +1,7 @@
 ![Aurora Version](https://img.shields.io/badge/AuroraVersion-2.0.0-yellow.svg)
 [![website](https://img.shields.io/badge/Website-KvasigSG-blue.svg)](http://kvasirsg.com/)
 [![contributors](https://img.shields.io/badge/Contributors-6-blue.svg)](https://github.com/KvasirSGDevelopment/Aurora/graphs/contributors)
-![team](https://img.shields.io/badge/Team_Members-2-blue.svg)
+[![team](https://img.shields.io/badge/Team_Members-2-blue.svg)](https://github.com/KvasirSGDevelopment/Aurora/blob/AuroraV2/Credits.md)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/KvasirSGDevelopment/Aurora/blob/AuroraV2/LICENSE.md)
 [![python](https://img.shields.io/badge/Python-3.6.0-blue.svg)](https://www.python.org/downloads/release/python-360/)
 [![SQLConnector](https://img.shields.io/badge/MySQL%20--%20Connector-2.1.4-blue.svg)](https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html)
