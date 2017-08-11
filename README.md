@@ -1,13 +1,14 @@
-[![Aurora Version](https://img.shields.io/badge/AuroraVersion-2.0.0-blue.svg)](https://github.com/KvasirSGDevelopment/Aurora/blob/master/Version.md)
-[![website](https://img.shields.io/badge/Website-KvasigSG-blue.svg)](http://kvasirsg.com/) 
-[![contributors](https://img.shields.io/badge/TeamMembers-6-blue.svg)](https://github.com/KvasirSGDevelopment/FlixBot/graphs/contributors) 
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/KvasirSGDevelopment/FlixBot/blob/master/LICENSE.md) 
+![Aurora Version](https://img.shields.io/badge/AuroraVersion-2.0.0-yellow.svg)
+[![website](https://img.shields.io/badge/Website-KvasigSG-blue.svg)](http://kvasirsg.com/)
+[![contributors](https://img.shields.io/badge/Contributors-6-blue.svg)](https://github.com/KvasirSGDevelopment/Aurora/graphs/contributors)
+![team](https://img.shields.io/badge/Team_Members-2-blue.svg)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/KvasirSGDevelopment/Aurora/blob/AuroraV2/LICENSE.md)
 [![python](https://img.shields.io/badge/Python-3.6.0-blue.svg)](https://www.python.org/downloads/release/python-360/)
 [![SQLConnector](https://img.shields.io/badge/MySQL%20--%20Connector-2.1.4-blue.svg)](https://dev.mysql.com/doc/connector-python/en/connector-python-installation.html)
 <br>
 # Aurora
 Aurora is the official "KvasirSG Development" Discord Bot with various features, for administration as well and music and fun.
-We are always hard working on development and improvents so if you got any sugeestions or want to report a but feel free to
+We are always hard working on development and improvents so if you got any suggestions or want to report a bug feel free to
 report of issue or suggestion in <a href="https://github.com/KvasirSGDevelopment/Aurora/issues">issues</a>.
 
 Aurora is licensed under the <a href="https://github.com/KvasirSGDevelopment/Aurora/blob/master/LICENSE.md">MIT</a> license.
