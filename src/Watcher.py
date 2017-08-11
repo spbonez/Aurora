@@ -12,6 +12,6 @@ class Watcher:
         global bot
         bot = DiscordBot
 
-    @bot.event()
+    @bot.event
     def on_message(message):
         print(message)
