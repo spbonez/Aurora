@@ -15,5 +15,10 @@ Commands.load_all_modules(modulePath, bot)
 async def on_ready():
     print('Logged in as:\n{0} (ID: {0.id})'.format(bot.user))
 
+
+@bot.event
+async def on_message(message):
+    print(str(message.content))
+
 bot.run(User.Token)
-Watcher.Watcher(bot)
+
