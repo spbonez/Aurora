@@ -1,3 +1,4 @@
+# coding=utf-8
 from src import Commands
 import os
 from discord.ext import commands
@@ -14,3 +15,4 @@ async def on_ready():
     print('Logged in as:\n{0} (ID: {0.id})'.format(bot.user))
 
 bot.run(User.Token)
+
