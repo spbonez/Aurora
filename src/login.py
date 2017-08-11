@@ -3,7 +3,6 @@ from src import Commands
 import os
 from discord.ext import commands
 from config.auth import User
-from src.Watcher import Watcher
 
 modulePath = os.path.join(os.getcwd(), "src", "modules")
 
