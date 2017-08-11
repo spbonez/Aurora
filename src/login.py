@@ -18,7 +18,8 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    await Watcher.new_message(message)
+    print(str(message.server) + " | " + str(message.channel) + " | " + str(message.author) + " - "
+          + str(message.content))
 
 bot.run(User.Token)
 
