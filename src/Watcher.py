@@ -6,9 +6,11 @@ from discord.ext import commands
 
 class Watcher:
 
-    def __init__(self, bot):
-        self.bot = bot
+    bot = commands.Bot
 
+    def __init__(self, DiscordBot):
+        global bot
+        bot = DiscordBot
 
     @bot.event()
     def on_message(message):
