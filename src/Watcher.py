@@ -6,10 +6,7 @@ from discord.ext import commands
 
 class Watcher:
 
-    bot = commands.Bot
-
-    def __init__(self, DiscordBot):
-        global bot
-        bot = DiscordBot
-
-
+    @staticmethod
+    def new_message(message):
+        print(str(message.server) + " | " + str(message.channel) + " | " + str(message.author) + " - "
+              + str(message.content))

@@ -3,7 +3,7 @@ from src import Commands
 import os
 from discord.ext import commands
 from config.auth import User
-from src import Watcher
+from src.Watcher import Watcher
 
 modulePath = os.path.join(os.getcwd(), "src", "modules")
 
@@ -18,7 +18,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    print(str(message.content))
+    Watcher.new_message(message)
 
 bot.run(User.Token)
 
