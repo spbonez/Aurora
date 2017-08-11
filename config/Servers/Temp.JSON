@@ -1,0 +1,9 @@
+{
+  "Roles":{},
+  "Members:":{},
+  "ActiveModules":{},
+  "RestrictedModules":{
+    "Role":{},
+    "Member":{}
+  }
+}
