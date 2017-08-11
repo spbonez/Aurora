@@ -18,7 +18,7 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
-    Watcher.new_message(message)
+    await Watcher.new_message(message)
 
 bot.run(User.Token)
 
