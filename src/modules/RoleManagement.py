@@ -15,18 +15,17 @@ class RoleManagement:
 
         def yes_or_no(msg):
             if msg.content == 'yes' or msg.content == 'Yes':
-                return ValueError
-            else:
-                return False
+                return True
+            elif msg.content == 'no' or msg.content == 'No':
+                return 'nope'
 
-        if ctx.message.author is ctx.message.server.owner:
-            if not self.active:
-                await self.bot.say("Do you want roles based on games ? ( yes or no)")
-                msg = await self.bot.wait_for_message(timeout=30, author=ctx.message.author,
-                                                      channel=ctx.message.channel,
-                                                      check=yes_or_no)
-                if msg is not None:
-                    await self.bot.say("YAY!")
+        if ctx.message.author is ctx.message.server.owner and not self.active:
+            await self.bot.say("Do you want roles based on games ? ( yes or no)")
+            msg = await self.bot.wait_for_message(timeout=30, author=ctx.message.author,
+                                                  channel=ctx.message.channel,
+                                                  check=yes_or_no)
+            if msg is not None or msg is not str:
+                await self.bot.say("YAY!")
 
     async def assign_role(self):
         pass
