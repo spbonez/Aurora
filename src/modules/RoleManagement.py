@@ -8,8 +8,8 @@ class RoleManagement:
         self.bot = bot
 
     @commands.command(pass_context=True, no_pm=True)
-    async def activate_roles(self, ctx, *, server: discord.Message.server, user: discord.Message.author):
-        if user is server.owner:
+    async def activate_roles(self, ctx, *, user: discord.Message.author):
+        if user is user:
             print("YES!")
 
     async def assign_role(self):
