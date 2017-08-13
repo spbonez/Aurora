@@ -16,8 +16,6 @@ class RoleManagement:
         def yes_or_no(msg):
             if msg.content == 'yes' or msg.content == 'Yes':
                 return True
-            elif msg.content == 'no' or msg.content == 'No':
-                return LookupError
             else:
                 return False
 
@@ -26,10 +24,8 @@ class RoleManagement:
             msg = await self.bot.wait_for_message(timeout=30, author=ctx.message.author,
                                                   channel=ctx.message.channel,
                                                   check=yes_or_no)
-            if type(msg) is discord.Message:
+            if msg is discord.Message:
                 await self.bot.say("YAY!")
-            elif type(msg) is LookupError:
-                await self.bot.say("Buuhh!")
 
     async def assign_role(self):
         pass
