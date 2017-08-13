@@ -24,8 +24,10 @@ class RoleManagement:
             msg = await self.bot.wait_for_message(timeout=30, author=ctx.message.author,
                                                   channel=ctx.message.channel,
                                                   check=yes_or_no)
-            if msg is not None or msg is not str:
+            if msg is discord.Message:
                 await self.bot.say("YAY!")
+            elif type(msg) is str:
+                await self.bot.say("Buuhh!")
 
     async def assign_role(self):
         pass
