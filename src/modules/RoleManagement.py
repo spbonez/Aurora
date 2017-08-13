@@ -19,7 +19,6 @@ class RoleManagement:
 
 
 def add_to_bot(bot):
-def add_to_bot(bot):
     bot.add_cog(RoleManagement(bot))
     print("Role Management Added to Bot!")
 
