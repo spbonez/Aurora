@@ -15,7 +15,7 @@ class RoleManagement:
 
         def yes_or_no(msg):
             if msg.content == 'yes' or msg.content == 'Yes':
-                raise ValueError
+                return ValueError
             else:
                 return False
 
