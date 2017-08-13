@@ -9,7 +9,8 @@ class RoleManagement:
 
     @commands.command(pass_context=True, no_pm=True)
     async def activate_roles(self, ctx):
-        print(str(ctx.message.author))
+        if ctx.message.author is ctx.message.server.owner:
+            print("Yeaah boi")
 
     async def assign_role(self):
         pass
