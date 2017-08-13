@@ -19,11 +19,11 @@ class RoleManagement:
 
         if ctx.message.author is ctx.message.server.owner:
             if not self.active:
-                self.bot.say("Do you want roles based on games ? ( yes or no)")
+                await self.bot.say("Do you want roles based on games ? ( yes or no)")
                 msg = self.bot.wait_for_message(timeout=30, author=ctx.message.author, channel=ctx.message.channel,
                                                 check=yes_or_no)
                 if msg is not None:
-                    self.bot.say("YAY!")
+                    await self.bot.say("YAY!")
 
     async def assign_role(self):
         pass
