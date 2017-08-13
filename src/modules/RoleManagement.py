@@ -7,13 +7,15 @@ class RoleManagement:
     def __init__(self, bot):
         self.bot = bot
         self.active = False
+        self.games = {}
+        self.countries = {}
 
     @commands.command(pass_context=True, no_pm=True)
     async def activate_roles(self, ctx):
 
         def yes_or_no(msg):
             if msg.content == 'yes' or msg.content == 'Yes':
-                return True
+                raise ValueError
             else:
                 return False
 
