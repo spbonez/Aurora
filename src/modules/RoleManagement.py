@@ -8,9 +8,8 @@ class RoleManagement:
         self.bot = bot
 
     @commands.command(pass_context=True, no_pm=True)
-    async def activate_roles(self, ctx, channel: discord.Channel):
-        if channel is channel:
-            print("YES!")
+    async def activate_roles(self, ctx, user: discord.Message.author):
+        print("YESS!!")
 
     async def assign_role(self):
         pass
@@ -19,6 +18,7 @@ class RoleManagement:
         pass
 
 
+def add_to_bot(bot):
 def add_to_bot(bot):
     bot.add_cog(RoleManagement(bot))
     print("Role Management Added to Bot!")
