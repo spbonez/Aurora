@@ -18,6 +18,8 @@ class RoleManagement:
                 return True
             elif msg.content == 'no' or msg.content == 'No':
                 return LookupError
+            else:
+                return False
 
         if ctx.message.author is ctx.message.server.owner and not self.active:
             await self.bot.say("Do you want roles based on games ? ( yes or no)")
