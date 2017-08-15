@@ -28,11 +28,11 @@ class AFK:
             if msg is not None:
                 await self.bot.say("bob")
 
-    message_watcher()
-
 
 def add_to_bot(bot):
-    bot.add_cog(AFK(bot))
+    afk = AFK(bot)
+    afk.message_watcher()
+    bot.add_cog(afk)
     print("AFK Added to Bot!")
 
 
