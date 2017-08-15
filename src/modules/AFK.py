@@ -44,7 +44,7 @@ class AFK:
                 if user in self.afk_members:
                     await self.bot.say(old_nick + " is afk")
                 else:
-                    await self.bot.change_nickname(user, old_nick)
+                    await self.bot.change_nickname(user, None)
                     await self.bot.say("Welcome back " + str(old_nick))
 
 
