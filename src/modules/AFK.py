@@ -19,7 +19,9 @@ class AFK:
     async def message_watcher(self, user):
 
         def check(message):
-            print(message.mentions + '--------------' + self.afk_members)
+            print(message.mentions)
+            print("--------------")
+            print(self.afk_members)
             if user in message.mentions:
                 return True
             else:
