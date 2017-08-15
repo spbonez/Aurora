@@ -12,8 +12,6 @@ class AFK:
     async def afk(self, ctx):
         self.afk_members.append(ctx.message.author)
         print(self.afk_members)
-        await self.bot.change_nickname(ctx.message.author, str("[AFK]" + str(ctx.message.author.nick
-                                                                             or ctx.message.author.name)))
         await self.message_watcher(ctx.message.author)
 
     @commands.command(pass_context=True, no_pm=True)
@@ -24,6 +22,7 @@ class AFK:
     # Afk member messaged
     async def message_watcher(self, user):
         old_nick = user.nick or user.name
+        await self.bot.change_nickname(user, str("[AFK]" + old_nick))
 
         def check(message):
             print(message.mentions)
@@ -44,7 +43,7 @@ class AFK:
                 if user in self.afk_members:
                     await self.bot.say(old_nick + " is afk")
                 else:
-                    await self.bot.change_nickname(user, None)
+                    await self.bot.change_nickname(user, old_nick)
                     await self.bot.say("Welcome back " + str(old_nick))
 
 
