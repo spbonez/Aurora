@@ -16,8 +16,8 @@ class AFK:
         await self.message_watcher(ctx.message.author)
 
     @commands.command(pass_context=True, no_pm=True)
-    async def back(self, ctx):
-        self.afk_return(ctx.message.author)
+    async def nick(self, ctx):
+        await self.bot.say(str(ctx.message.author.nick))
 
     # Afk member messaged
     async def message_watcher(self, user):
