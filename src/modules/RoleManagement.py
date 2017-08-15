@@ -36,8 +36,8 @@ class RoleManagement:
             if country_role is not None:
                 await self.bot.add_roles(ctx.message.author, country_role)
             else:
-                country_role = await self.bot.create_role(ctx.message.server, name=country_role,
-                                                    permissions=perm.Permissions.general())
+                country_role = await self.bot.create_role(ctx.message.server, name=country,
+                                                          permissions=perm.Permissions.none())
                 await self.bot.add_roles(ctx.message.author, country_role)
 
             await self.bot.say("{0.author.mention} you have been assigned to {1}".format(ctx.message, country_role))
