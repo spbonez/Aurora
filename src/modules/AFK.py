@@ -41,7 +41,7 @@ class AFK:
                 if msg.author in self.afk_members:
                     await self.bot.say(user.nick + " is afk")
                 else:
-                    await self.bot.say("Welcome back " + msg.author.nick)
+                    await self.bot.say("Welcome back " + str(msg.author.nick))
 
     def afk_return(self, member):
         self.afk_members.remove(member)
