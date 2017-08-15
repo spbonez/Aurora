@@ -16,7 +16,7 @@ def add_to_bot(bot):
     bot.add_cog(AFK(bot))
     print("AFK Added to Bot!")
 
-'''
+
 def remove_from_bot(bot):
     bot.remove_cog("AFK")
-    print("AFK Removed From Bot")
+    print("AFK Removed From Bot")'''
