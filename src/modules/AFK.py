@@ -38,7 +38,7 @@ class AFK:
             msg = await self.bot.wait_for_message(check=check)
 
             if msg is not None:
-                if msg.author in self.afk_members:
+                if user in self.afk_members:
                     await self.bot.say(user.nick + " is afk")
                 else:
                     await self.bot.say("Welcome back " + str(msg.author.nick))
