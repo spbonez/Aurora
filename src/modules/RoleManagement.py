@@ -40,7 +40,7 @@ class RoleManagement:
                                                           permissions=perm.Permissions.none())
                 await self.bot.add_roles(ctx.message.author, country_role)
 
-            await self.bot.say("{0.author.mention} you have been assigned to {1}".format(ctx.message, country_role))
+            await self.bot.say("{0.author.mention} you have been assigned to {1}".format(ctx.message, country))
 
     async def leave(self, country: str):
         pass
