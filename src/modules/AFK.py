@@ -11,12 +11,14 @@ class AFK:
     @commands.command(pass_context=True, no_pm=True)
     async def afk(self, ctx):
         self.afk_members.append(ctx.message.author)
+        print(self.afk_members)
         await self.bot.change_nickname(ctx.message.author, "bob")
 
     # Afk member messaged
     async def message_watcher(self):
 
         def check(msg):
+            print(msg.mentions + '--------------' + self.afk_members)
             if msg.mentions in self.afk_members:
                 return True
             else:
