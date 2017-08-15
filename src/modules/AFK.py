@@ -15,6 +15,10 @@ class AFK:
         await self.bot.change_nickname(ctx.message.author, "bob")
         await self.message_watcher(ctx.message.author)
 
+    @commands.command(pass_context=True, no_pm=True)
+    async def back(self, ctx):
+        self.afk_members.remove(ctx.message.author)
+
     # Afk member messaged
     async def message_watcher(self, user):
 
@@ -24,6 +28,9 @@ class AFK:
             print(self.afk_members)
             if user in message.mentions:
                 return True
+            elif user is message.author:
+                self.afk_members.remove(message.author)
+                return True
             else:
                 return False
 
@@ -31,7 +38,10 @@ class AFK:
             msg = await self.bot.wait_for_message(check=check)
 
             if msg is not None:
-                await self.bot.say(user.nick + " is afk")
+                if msg.author in self.afk_members:
+                    await self.bot.say(user.nick + " is afk")
+                else:
+                    await self.bot.say("Welcome back " + msg.author.nick)
 
 
 def add_to_bot(bot):
