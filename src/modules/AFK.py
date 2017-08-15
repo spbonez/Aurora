@@ -45,6 +45,7 @@ class AFK:
 
     def afk_return(self, member):
         self.afk_members.remove(member)
+        self.bot.change_nickname(member)
 
 
 def add_to_bot(bot):
