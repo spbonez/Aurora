@@ -1,5 +1,6 @@
 # coding=utf-8
-import discord
+import discord.permissions as perm
+import discord.utils as util
 from discord.ext import commands
 
 
@@ -16,7 +17,7 @@ class RoleManagement:
                           "finland", "france",
                           "germany", "greece",
                           "hungary",
-                          "ireland",  "israel", "italy",
+                          "ireland", "israel", "italy",
                           "latvia", "lithuania",
                           "macedonia", "mexico", "middle_east",
                           "netherlands", "norway", "newzealand",
@@ -28,15 +29,27 @@ class RoleManagement:
                           "unitedkingdom"
                           }
 
-    async def join(self, country: str):
-        pass
+    @commands.command(pass_context=True, no_pm=True)
+    async def join(self, ctx, country: str):
+        if country in self.countries:
+            country_role = util.get(ctx.message.server.roles, name=country)
+            if country_role is not None:
+                self.bot.add_roles(ctx.message.author, country_role)
+            else:
+                country_role = self.bot.create_role(ctx.message.server, name=country_role,
+                                                    permissions=perm.Permissions.general())
+                self.bot.add_roles(ctx.message.author, country_role)
+
+            self.bot.say("{0.author.mention} you have been assigned to {1}".format(ctx.message, country_role))
 
     async def leave(self, country: str):
         pass
 
     @commands.command(pass_context=False, no_pm=True)
-    async def show(self):
-        msg = "```"
+    async def roles(self):
+        msg = 'Region Roles\n' \
+              'To join a region use the join command followed by the desired region'
+        msg += "```"
         for country in sorted(self.countries):
             msg += country + "\n"
         msg += "```"
