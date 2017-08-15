@@ -47,7 +47,7 @@ class AFK:
                 else:
                     await self.bot.change_nickname(user, old_nick)
                     # await self.bot.say("Welcome back " + str(old_nick))
-                    await self.bot.send_message(msg.channel, "Welcome back {0.mention".format(user))
+                    await self.bot.send_message(msg.channel, "Welcome back {0.mention}".format(user))
 
 
 def add_to_bot(bot):
