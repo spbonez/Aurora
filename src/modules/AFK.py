@@ -31,7 +31,7 @@ class AFK:
             if user in message.mentions:
                 return True
             elif user is message.author:
-                self.afk_return(user, old_nick)
+                self.afk_members.remove(user)
                 return True
             else:
                 return False
@@ -43,11 +43,8 @@ class AFK:
                 if user in self.afk_members:
                     await self.bot.say(old_nick + " is afk")
                 else:
+                    await self.bot.change_nickname(user, old_nick)
                     await self.bot.say("Welcome back " + str(old_nick))
-
-    def afk_return(self, member, old_nick):
-        self.afk_members.remove(member)
-        self.bot.change_nickname(member, old_nick)
 
 
 def add_to_bot(bot):
