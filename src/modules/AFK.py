@@ -1,5 +1,5 @@
 # coding=utf-8
-import discord.utils as utilis
+import discord
 from discord.ext import commands
 
 
@@ -9,9 +9,9 @@ class AFK:
         self.afk_members = []
 
     @commands.command(pass_context=True, no_pm=True)
-    async def afk(self, ctx):
+    async def afk(self, ctx, *, status: str):
+        status = status
         self.afk_members.append(ctx.message.author)
-        print(self.afk_members)
         await self.bot.say('{0.author.mention} you have been set as AFK'.format(ctx.message))
         await self.message_watcher(ctx.message.author)
 
@@ -26,9 +26,6 @@ class AFK:
         await self.bot.change_nickname(user, str("[AFK]" + old_nick))
 
         def check(message):
-            print(message.mentions)
-            print("--------------")
-            print(self.afk_members)
             if user in message.mentions:
                 return True
             elif user is message.author:
@@ -42,11 +39,9 @@ class AFK:
 
             if msg is not None:
                 if user in self.afk_members:
-                    # await self.bot.say(old_nick + " is afk")
                     await self.bot.send_message(msg.channel, old_nick + " is afk")
                 else:
                     await self.bot.change_nickname(user, old_nick)
-                    # await self.bot.say("Welcome back " + str(old_nick))
                     await self.bot.send_message(msg.channel, "Welcome back {0.mention}".format(user))
 
 
