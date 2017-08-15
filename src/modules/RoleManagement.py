@@ -7,30 +7,39 @@ class RoleManagement:
     def __init__(self, bot):
         self.bot = bot
         self.active = False
-        self.countries = {}
+        self.countries = {"pacific {US}", "central {US}", "eastern {US}", "mountain {US}",
+                          "africa", "asia", "australia", "austria",
+                          "belgium", "bosnia", "brazil", "bulgaria",
+                          "canada", "croatia", "czech",
+                          "denmark",
+                          "estonia", "europe",
+                          "finland", "france",
+                          "germany", "greece",
+                          "hungary",
+                          "ireland",  "israel", "italy",
+                          "latvia", "lithuania",
+                          "macedonia", "mexico", "middle_east",
+                          "netherlands", "norway", "newzealand",
+                          "philippines", "poland", "portugal",
+                          "romania", "russia",
+                          "saudi", "scotland", "serbia", "singapore", "slovakia", "slovenia",
+                          "southamerica", "spain", "sweden", "switzerland",
+                          "turkey",
+                          "unitedkingdom"
+                          }
 
-    @commands.command(pass_context=True, no_pm=True)
-    async def activate_roles(self, ctx):
-
-        def check(msg):
-            if msg.content == 'std' or msg.content == 'custom':
-                return True
-            else:
-                return False
-
-        if ctx.message.author is ctx.message.server.owner and not self.active:
-            await self.bot.say("Use the standard county list, or a custom list ? (std / custom)")
-
-            msg = await self.bot.wait_for_message(timeout=30, author=ctx.message.author, channel=ctx.message.channel,
-                                                  check=check)
-            if msg is not None:
-                await self.bot.say("What up")
-
-    async def assign_role(self):
+    async def join(self, country: str):
         pass
 
-    async def remove_role(self):
+    async def leave(self, country: str):
         pass
+
+    @commands.command(pass_context=False, no_pm=True)
+    async def show(self):
+        msg = "'''"
+        for country in self.countries:
+            msg += country + "\n"
+        msg += "'''"
 
 
 def add_to_bot(bot):
