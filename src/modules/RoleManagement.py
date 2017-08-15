@@ -7,25 +7,24 @@ class RoleManagement:
     def __init__(self, bot):
         self.bot = bot
         self.active = False
-        self.games = {}
         self.countries = {}
 
     @commands.command(pass_context=True, no_pm=True)
     async def activate_roles(self, ctx):
 
-        def yes_or_no(msg):
-            if msg.content == 'yes' or msg.content == 'Yes':
+        def check(msg):
+            if msg.content == 'std' or msg.content == 'custom':
                 return True
             else:
                 return False
 
         if ctx.message.author is ctx.message.server.owner and not self.active:
-            await self.bot.say("Do you want roles based on games ? ( yes or no)")
-            msg = await self.bot.wait_for_message(timeout=30, author=ctx.message.author,
-                                                  channel=ctx.message.channel,
-                                                  check=yes_or_no)
-            if msg is discord.Message:
-                await self.bot.say("YAY!")
+            await self.bot.say("Use the standard county list, or a custom list ? (std / custom)")
+
+            msg = await self.bot.wait_for_message(timeout=30, author=ctx.message.author, channel=ctx.message.channel,
+                                                  check=check)
+            if msg is not None:
+                self.bot.say("What up")
 
     async def assign_role(self):
         pass
