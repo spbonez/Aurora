@@ -33,7 +33,7 @@ class AFK:
 
 
 def add_to_bot(bot):
-    bot.add_cog(AFK)
+    bot.add_cog(AFK(bot))
     print("AFK Added to Bot!")
 
 
