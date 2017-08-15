@@ -13,7 +13,7 @@ class AFK:
         self.afk_members.append(ctx.message.author)
         print(self.afk_members)
         await self.bot.change_nickname(ctx.message.author, "bob")
-        self.message_watcher(ctx.message.author)
+        await self.message_watcher(ctx.message.author)
 
     # Afk member messaged
     async def message_watcher(self, user):
