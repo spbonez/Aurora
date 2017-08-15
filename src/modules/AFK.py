@@ -17,7 +17,7 @@ class AFK:
 
     @commands.command(pass_context=True, no_pm=True)
     async def back(self, ctx):
-        self.afk_members.remove(ctx.message.author)
+        await self.afk_return(ctx.message.author)
 
     # Afk member messaged
     async def message_watcher(self, user):
@@ -29,7 +29,7 @@ class AFK:
             if user in message.mentions:
                 return True
             elif user is message.author:
-                self.afk_members.remove(message.author)
+                self.afk_return(user)
                 return True
             else:
                 return False
@@ -42,6 +42,9 @@ class AFK:
                     await self.bot.say(user.nick + " is afk")
                 else:
                     await self.bot.say("Welcome back " + msg.author.nick)
+
+    async def afk_return(self, member):
+        self.afk_members.remove(member)
 
 
 def add_to_bot(bot):
