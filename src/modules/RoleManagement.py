@@ -24,7 +24,7 @@ class RoleManagement:
             msg = await self.bot.wait_for_message(timeout=30, author=ctx.message.author, channel=ctx.message.channel,
                                                   check=check)
             if msg is not None:
-                self.bot.say("What up")
+                await self.bot.say("What up")
 
     async def assign_role(self):
         pass
