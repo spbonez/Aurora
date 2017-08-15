@@ -9,7 +9,7 @@ class AFK:
         self.afk_members = []
 
     @commands.command(pass_context=True, no_pm=True)
-    async def afk(self, ctx, *, status: str):
+    async def afk(self, ctx, *, status: str = None):
         status = status
         self.afk_members.append(ctx.message.author)
         await self.bot.say('{0.author.mention} you have been set as AFK'.format(ctx.message))
