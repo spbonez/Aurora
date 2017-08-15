@@ -9,11 +9,10 @@ class AFK:
         self.afk_members = []
 
     @commands.command(pass_context=True, no_pm=True)
-    async def afk(self, ctx, *, status: str = None):
-        status = status
+    async def afk(self, ctx, *, status: str = ''):
         self.afk_members.append(ctx.message.author)
         await self.bot.say('{0.author.mention} you have been set as AFK'.format(ctx.message))
-        await self.message_watcher(ctx.message.author)
+        await self.message_watcher(ctx.message.author, status)
 
     @commands.command(pass_context=True, no_pm=True)
     async def nick(self, ctx):
@@ -21,8 +20,9 @@ class AFK:
         await self.bot.say(str(nick))
 
     # Afk member messaged
-    async def message_watcher(self, user):
+    async def message_watcher(self, user, status):
         old_nick = user.nick or user.name
+        user_status = status
         await self.bot.change_nickname(user, str("[AFK]" + old_nick))
 
         def check(message):
@@ -39,7 +39,7 @@ class AFK:
 
             if msg is not None:
                 if user in self.afk_members:
-                    await self.bot.send_message(msg.channel, old_nick + " is afk")
+                    await self.bot.send_message(msg.channel, old_nick + " is afk: " + user_status)
                 else:
                     await self.bot.change_nickname(user, old_nick)
                     await self.bot.send_message(msg.channel, "Welcome back {0.mention}".format(user))
