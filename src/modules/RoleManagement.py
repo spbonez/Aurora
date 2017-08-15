@@ -40,6 +40,7 @@ class RoleManagement:
         for country in self.countries:
             msg += country + "\n"
         msg += "'''"
+        self.bot.say(msg)
 
 
 def add_to_bot(bot):
