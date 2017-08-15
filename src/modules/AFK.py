@@ -13,13 +13,14 @@ class AFK:
         self.afk_members.append(ctx.message.author)
         print(self.afk_members)
         await self.bot.change_nickname(ctx.message.author, "bob")
+        self.message_watcher(ctx.message.author)
 
     # Afk member messaged
-    async def message_watcher(self):
+    async def message_watcher(self, user):
 
-        def check(msg):
-            print(msg.mentions + '--------------' + self.afk_members)
-            if msg.mentions in self.afk_members:
+        def check(message):
+            print(message.mentions + '--------------' + self.afk_members)
+            if user in message.mentions:
                 return True
             else:
                 return False
@@ -28,13 +29,11 @@ class AFK:
             msg = await self.bot.wait_for_message(check=check)
 
             if msg is not None:
-                await self.bot.say("bob")
+                await self.bot.say(user.nick + "is afk")
 
 
 def add_to_bot(bot):
-    afk = AFK(bot)
-    afk.message_watcher()
-    bot.add_cog(afk)
+    bot.add_cog(AFK)
     print("AFK Added to Bot!")
 
 
