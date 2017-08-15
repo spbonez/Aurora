@@ -9,7 +9,7 @@ class AFK:
 
     @commands.command(pass_context=True, no_pm=True)
     async def afk(self, ctx):
-        self.bot.change_nickname(ctx.message.author, "[AFK]" + ctx.message.author.nick)
+        self.bot.change_nickname(ctx.message.author, str("[AFK]" + ctx.message.author.nick))
 
 
 def add_to_bot(bot):
