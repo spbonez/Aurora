@@ -27,11 +27,11 @@ class AFK:
             else:
                 return False
 
-        if len(self.afk_members) > 0:
+        if user in self.afk_members:
             msg = await self.bot.wait_for_message(check=check)
 
             if msg is not None:
-                await self.bot.say(user.nick + "is afk")
+                await self.bot.say(user.nick + " is afk")
 
 
 def add_to_bot(bot):
