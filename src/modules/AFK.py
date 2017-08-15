@@ -12,7 +12,7 @@ class AFK:
     async def afk(self, ctx):
         self.afk_members.append(ctx.message.author)
         print(self.afk_members)
-        await self.bot.change_nickname(ctx.message.author, "bob")
+        await self.bot.change_nickname(ctx.message.author, str("[AFK]" + str(ctx.message.author.nick)))
         await self.message_watcher(ctx.message.author)
 
     @commands.command(pass_context=True, no_pm=True)
