@@ -34,13 +34,13 @@ class RoleManagement:
         if country in self.countries:
             country_role = util.get(ctx.message.server.roles, name=country)
             if country_role is not None:
-                self.bot.add_roles(ctx.message.author, country_role)
+                await self.bot.add_roles(ctx.message.author, country_role)
             else:
-                country_role = self.bot.create_role(ctx.message.server, name=country_role,
+                country_role = await self.bot.create_role(ctx.message.server, name=country_role,
                                                     permissions=perm.Permissions.general())
-                self.bot.add_roles(ctx.message.author, country_role)
+                await self.bot.add_roles(ctx.message.author, country_role)
 
-            self.bot.say("{0.author.mention} you have been assigned to {1}".format(ctx.message, country_role))
+            await self.bot.say("{0.author.mention} you have been assigned to {1}".format(ctx.message, country_role))
 
     async def leave(self, country: str):
         pass
