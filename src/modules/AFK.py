@@ -25,7 +25,7 @@ class AFK:
             else:
                 return False
 
-        if self.afk_members.count > 0:
+        if len(self.afk_members) > 0:
             msg = await self.bot.wait_for_message(check=check)
 
             if msg is not None:
