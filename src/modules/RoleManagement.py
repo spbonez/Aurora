@@ -5,6 +5,7 @@ from discord.ext import commands
 
 
 class RoleManagement:
+    """Join the roles you want to yourself, no need to bother an mod for this anymore!"""
     def __init__(self, bot):
         self.bot = bot
         self.active = False
@@ -31,6 +32,7 @@ class RoleManagement:
 
     @commands.command(pass_context=True, no_pm=True)
     async def join(self, ctx, country: str):
+        """Joins a role"""
         if country in self.countries:
             country_role = util.get(ctx.message.server.roles, name=country)
             if country_role is not None:
@@ -47,6 +49,7 @@ class RoleManagement:
 
     @commands.command(pass_context=False, no_pm=True)
     async def roles(self):
+        """Display all available roles to join"""
         msg = 'Region Roles\n' \
               'To join a region use the join command followed by the desired region'
         msg += "```"
