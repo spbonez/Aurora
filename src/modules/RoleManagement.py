@@ -7,7 +7,7 @@ class RoleManagement:
     def __init__(self, bot):
         self.bot = bot
         self.active = False
-        self.countries = {"pacific {US}", "central {US}", "eastern {US}", "mountain {US}",
+        self.countries = {"{US}pacific", "{US}central", "{US}eastern", "{US}mountain",
                           "africa", "asia", "australia", "austria",
                           "belgium", "bosnia", "brazil", "bulgaria",
                           "canada", "croatia", "czech",
@@ -36,10 +36,10 @@ class RoleManagement:
 
     @commands.command(pass_context=False, no_pm=True)
     async def show(self):
-        msg = "'''"
-        for country in self.countries:
+        msg = "```"
+        for country in sorted(self.countries):
             msg += country + "\n"
-        msg += "'''"
+        msg += "```"
         await self.bot.say(msg)
 
 
