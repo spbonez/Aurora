@@ -13,8 +13,5 @@ report of issue or suggestion in <a href="https://github.com/KvasirSGDevelopment
 
 Aurora is licensed under the <a href="https://github.com/KvasirSGDevelopment/Aurora/blob/master/LICENSE.md">MIT</a> license.
 
-## Find us at:
-[![Not Enough RAM](https://discordapp.com/api/guilds/255100808658550785/embed.png?style=banner2)](https://discord.gg/ZZXVK3m)
-
 ## Add The Bot to your Server
 http://aurora.kvasirsg.com/add
