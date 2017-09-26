@@ -11,3 +11,6 @@ config/config.json
 
 config/config.json
 config/config.json
+docs/.ipynb_checkpoints/
+docs/Code/.ipynb_checkpoints/Aurora Code Documentation Introduction-checkpoint.ipynb
+docs/Code/src/.ipynb_checkpoints/login.py code-checkpoint.ipynb
