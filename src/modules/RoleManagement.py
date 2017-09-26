@@ -31,7 +31,7 @@ class RoleManagement:
                           }
 
     @commands.command(pass_context=True, no_pm=True)
-    async def join(self, ctx, country: str):
+    async def role(self, ctx, country: str):
         """Joins a role"""
         if country in self.countries:
             country_role = util.get(ctx.message.server.roles, name=country)
