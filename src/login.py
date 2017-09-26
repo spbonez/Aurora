@@ -8,6 +8,7 @@ modulePath = os.path.join(os.getcwd(), "src", "modules")
 
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('§'), description='AuroraV2 DevBuild PreAlpha')
 print()
+bot.remove_command('help')
 Commands.load_all_modules(modulePath, bot)
 
 
