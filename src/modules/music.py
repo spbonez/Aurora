@@ -10,7 +10,6 @@ if not discord.opus.is_loaded():
     # note that on windows this DLL is automatically provided for you
     discord.opus.load_opus('opus')
 
-
 class VoiceEntry:
     def __init__(self, message, player):
         self.requester = message.author
@@ -23,7 +22,6 @@ class VoiceEntry:
         if duration:
             fmt = fmt + ' [length: {0[0]}m {0[1]}s]'.format(divmod(duration, 60))
         return fmt.format(self.player, self.requester)
-
 
 class VoiceState:
     def __init__(self, bot):
@@ -62,9 +60,9 @@ class VoiceState:
             self.current.player.start()
             await self.play_next_song.wait()
 
-
 class Music:
     """Voice related commands.
+
     Works in multiple servers at once.
     """
     def __init__(self, bot):
@@ -102,6 +100,8 @@ class Music:
             await self.bot.say('Already in a voice channel...')
         except discord.ext.commands.errors.BadArgument:
             await self.bot.say('This is not a voice channel...')
+        except discord.InvalidArgument:
+            await self.bot.say('This is not a voice channel...')
         else:
             await self.bot.say('Ready to play audio in ' + channel.name)
 
@@ -124,8 +124,10 @@ class Music:
     @commands.command(pass_context=True, no_pm=True)
     async def play(self, ctx, *, song : str):
         """Plays a song.
+
         If there is a song currently in the queue, then it is
         queued until the next song is done playing.
+
         This command automatically searches as well from YouTube.
         The list of supported sites can be found here:
         https://rg3.github.io/youtube-dl/supportedsites.html
@@ -181,6 +183,7 @@ class Music:
     @commands.command(pass_context=True, no_pm=True)
     async def stop(self, ctx):
         """Stops playing audio and leaves the voice channel.
+
         This also clears the queue.
         """
         server = ctx.message.server
@@ -200,6 +203,7 @@ class Music:
     @commands.command(pass_context=True, no_pm=True)
     async def skip(self, ctx):
         """Vote to skip a song. The song requester can automatically skip.
+
         3 skip votes are needed for the song to be skipped.
         """
 

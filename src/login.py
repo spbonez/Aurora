@@ -6,15 +6,14 @@ from config.auth import User
 from config.cmd_not_found import cmd_not_found_messages
 import random
 
-modulePath = os.path.join(os.getcwd(), "src", "modules")
+__author__ = "Luke"
+__version__ = "0.0.1"
 
-commandNotFoundstr = "I'm sorry Dave, I'm afraid I can't do that"
+modulePath = os.path.join(os.getcwd(), "src", "modules")
 
 
 def command_not_found():
-
     messages = cmd_not_found_messages
-
     return random.choice(messages)
 
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('§'), description='AuroraV2 DevBuild PreAlpha')

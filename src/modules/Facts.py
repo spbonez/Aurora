@@ -2,6 +2,7 @@
 from discord.ext import commands
 import random
 from data.facts.fucked import facts
+
 __author__ = "Luke"
 __version__ = "0.0.1"
 
